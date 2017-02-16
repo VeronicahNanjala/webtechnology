@@ -15,40 +15,37 @@
 	  <h1>WELCOME TO NGOMA MUSIC</h1>
 	</div>
 
-<div class="row">
-    <div class="col-sm-6 col-md-4">
-          <img src="music.JPG" alt="300x200" style="width: 300px; height: 165px;float:left;padding-right:10px"  class="img-responsive">
-            <div class="caption">
-            </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-            <img src="drum.JPG" alt="300x200" style="width: 300px; height: 165px;float:left;padding-right:10px"  class="img-responsive">
-            <div class="caption">
-             </div>
-    </div>
-     <div class="col-sm-6 col-md-4">
-          <img src="lingala.JPG" alt="300x200" style="width: 300px; height: 165px;float:left;padding-right:10px"  class="img-responsive">
-            <div class="caption">
-            </div>
-    </div>
-</div>
-<p>fydwfs</p>
-<p>sdfnmdfg</p>
-<p>dgfgdfgeeyte</p>
-<p>jaghdffjsfkdfhdfghfbvncvbncvbncv</p>
 
-
-
-
-  </body>
-   <div class="col-md-4">
+<footer>
+<div class="col-md-4">
        <center>
-         <img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle" alt="...">
-           <br>
+         <img src="drum.jpg" class="img-circle" alt="...">
+        
              <h4 class="footertext">Ngoma</h4>
               <p class="footertext">You african heritage music.<br>
        </center>
    </div>
+
+   <div class="col-md-4">
+       <center>
+         <img src="music.jpg" class="img-circle" alt="..." style="float:left;padding-right:10px width: 300px; height: 300px; ">
+     
+             <h4 class="footertext">Ngoma</h4>
+              <p class="footertext">You african heritage.<br>
+       </center>
+   </div>
+
+      <div class="col-md-4">
+       <center>
+         <img src="lingala.jpg" class="img-circle" alt="..." style="float:left;padding-right:10px width: 250px; height: 250px; ">
+  
+             <h4 class="footertext">Ngoma</h4> 
+              <p class="footertext">You african heritage.<br>
+       </center>
+   </div>
+   </footer>
+
+  </body>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
