@@ -55,14 +55,9 @@
      <input type="password" name="password"><br><br>
     <input align="center" type="button" name="signin" value="Sign in" style="margin-left: 30%;"><br><br>
     <button type="button" class="btn btn-link">Forgot password?</button>
-   No account?<button type="button" class="btn btn-link">Sign up</button>
+   No account? <div class="btn btn-link"><a href="artistSignup.php">Sign up</a></div>
   </div>
 
-
-
-  <div>
-    
-  </div>
 </form>
 
 <footer>
