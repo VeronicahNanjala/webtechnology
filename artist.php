@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="veronicah.css">
 
   </head>
-  <body style="background-color: blue">
+  <body style="background-color: black">
   <!-- the beginning of php code-->
 <?php
 
@@ -22,22 +22,32 @@
 <!-- the end of php code-->
 
 <!-- the beginning of html header, footer and form code-->
-<header >
+<header style="background-color: lightblue;">
 	<div class="page-header" align="center"">
 	  <h1>WELCOME TO NGOMA MUSIC</h1>
 	</div>
 </header>
 
-<form align="center" style="background-color: white; margin: auto; width: 50%; text-decoration-color: white; margin: auto" >
-  <div align="center">
-  <h1> This is your home for african music</h1>
+<form align="center" style="background-color: white;width: 50%;margin: auto;" >
+  <div align="center" style="background-color: lightblue">
+  <h5> This is your home for african music</h1>
   <h2>Welcome back</h2>
+  <h1>LOGIN</h1>
   </div>
   <div>
-    User name: <input type="text" name="name"> <br><br>
-    Password: <input type="password" name="password"><br><br>
-    <input align="center" type="button" name="signin" value="Sign in"><br><br>
+    User name:<br>
+     <input type="text" name="name"> <br><br>
+    Password:<br>
+     <input type="password" name="password"><br><br>
+    <input align="center" type="button" name="signin" value="Sign in" style="margin-left: 30%;"><br><br>
+    <button type="button" class="btn btn-link">Forgot password?</button>
+   No account?<button type="button" class="btn btn-link">Sign up</button>
+  </div>
 
+
+
+  <div>
+    
   </div>
 </form>
 
