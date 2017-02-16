@@ -14,6 +14,20 @@
 
   </head>
   <body style="background-color: black">
+
+  <nav class="navbar navbar-default" style="background-color:black;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NgomaMuziki</a>
+    </div>
+    <ul class="nav navbar-nav" style="float: right">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Subscribe</a></li>
+      <li><a href="#">Live concerts</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+</nav>
   <!-- the beginning of php code-->
 <?php
 
@@ -22,7 +36,7 @@
 <!-- the end of php code-->
 
 <!-- the beginning of html header, footer and form code-->
-<header style="background-color: lightblue;">
+<header style="background-color: lightblue; height: 40%">
 	<div class="page-header" align="center"">
 	  <h1>WELCOME TO NGOMA MUSIC</h1>
 	</div>
