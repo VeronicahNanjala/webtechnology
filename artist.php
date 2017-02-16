@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="veronicah.css">
 
   </head>
-  <body>
+  <body style="background-color: blue">
   <!-- the beginning of php code-->
 <?php
 
@@ -23,13 +23,22 @@
 
 <!-- the beginning of html header, footer and form code-->
 <header >
-	<div class="page-header" align="center" style="background-color: grey">
+	<div class="page-header" align="center"">
 	  <h1>WELCOME TO NGOMA MUSIC</h1>
 	</div>
 </header>
 
-<form action="<?php echo htmlspecialchars($_SERVER[$PHP_SELF]) ?>">
-  
+<form align="center" style="background-color: white; margin: auto; width: 50%; text-decoration-color: white; margin: auto" >
+  <div align="center">
+  <h1> This is your home for african music</h1>
+  <h2>Welcome back</h2>
+  </div>
+  <div>
+    User name: <input type="text" name="name"> <br><br>
+    Password: <input type="password" name="password"><br><br>
+    <input align="center" type="button" name="signin" value="Sign in"><br><br>
+
+  </div>
 </form>
 
 <footer>
@@ -53,7 +62,7 @@
 
       <div class="col-md-4">
        <center>
-         <img src="lingala.jpg" class="img-circle" alt="..." style="float:left;padding-right:10px width: 250px; height: 250px; ">
+         <img src="lingala.jpg" class="img-circle" alt="..." style="float:left;padding-right:10px width: 300px; height: 300px; ">
   
              <!-- <h4 class="footertext">Ngoma</h4> 
               <p class="footertext">You african heritage.<br> -->
