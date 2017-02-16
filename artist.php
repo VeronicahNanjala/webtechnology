@@ -9,12 +9,28 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+<!-- my css -->
+    <link rel="stylesheet" type="text/css" href="veronicah.css">
+
   </head>
   <body>
-	<div class="page-header" align="center">
+  <!-- the beginning of php code-->
+<?php
+
+
+?>
+<!-- the end of php code-->
+
+<!-- the beginning of html header, footer and form code-->
+<header >
+	<div class="page-header" align="center" style="background-color: grey">
 	  <h1>WELCOME TO NGOMA MUSIC</h1>
 	</div>
+</header>
 
+<form action="<?php echo htmlspecialchars($_SERVER[$PHP_SELF]) ?>">
+  
+</form>
 
 <footer>
 <div class="col-md-4">
@@ -39,8 +55,8 @@
        <center>
          <img src="lingala.jpg" class="img-circle" alt="..." style="float:left;padding-right:10px width: 250px; height: 250px; ">
   
-             <h4 class="footertext">Ngoma</h4> 
-              <p class="footertext">You african heritage.<br>
+             <!-- <h4 class="footertext">Ngoma</h4> 
+              <p class="footertext">You african heritage.<br> -->
        </center>
    </div>
    </footer>
