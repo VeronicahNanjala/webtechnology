@@ -53,7 +53,8 @@
      <input type="text" name="name"> <br><br>
     Password:<br>
      <input type="password" name="password"><br><br>
-    <input align="center" type="button" name="signin" value="Sign in" style="margin-left: 30%;"><br><br>
+   <div><div type="button" style="margin-left: 30%;"><a href="artistLognedIn.php">Sign in</a>
+   </div><br><br>
     <button type="button" class="btn btn-link">Forgot password?</button>
    No account? <div class="btn btn-link"><a href="artistSignup.php">Sign up</a></div>
   </div>

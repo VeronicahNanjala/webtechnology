@@ -61,7 +61,8 @@
     Copyright Registration Number:<br>
      <input type="text" name="uname"> <br><br>
 
-   <div><input type="submit" class="btn btn-info" value="Sign up" style="width: 50%"></div>
+   <div><div class="btn btn-success" type="button"><a href="artist.php">Sign up</a>
+   </div><br><br>
     Already have an account?<div class="btn btn-link"><a href="artist.php">Sign in</a></div>
 
   </div>
