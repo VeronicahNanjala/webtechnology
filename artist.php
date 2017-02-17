@@ -31,7 +31,6 @@
   <!-- the beginning of php code-->
 <?php
 
-
 ?>
 <!-- the end of php code-->
 
