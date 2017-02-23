@@ -46,6 +46,48 @@ if(isset($_POST['submit'])){
       else{
       $emailErr="password is required";
       }
+
+  if (isset($_POST['username']) && !empty($_POST['username'])){
+     $username=$_POST['username'];
+     }
+      else{
+      $username="Username is required";
+      }
+
+  if (isset($_POST['copyrightno']) && !empty($_POST['copyrightno'])){
+      $copyrightno=$_POST['copyrightno'];
+     }
+      else{
+      $copyrightErr="Copyright is required";
+      }
+
+  if (isset($_POST['region']) && !empty($_POST['region'])){
+      $region=$_POST['region'];
+     }
+      else{
+      $regionErr="Region is required";
+      }
+
+  if (isset($_POST['musictype']) && !empty($_POST['musictype'])){
+      $musictype=$_POST['musictype'];
+      }
+      else{
+      $musicTypeErr="The type of your music is required";
+      }
+
+   if (isset($_POST['birthdate']) && !empty($_POST['birthdate'])){
+      $birthdate=$_POST['birthdate'];
+      }
+      else{
+      $birthdateErr="Required";
+      }
+
+  if (isset($_POST['about']) && !empty($_POST['about'])){
+      $about=$_POST['about'];
+      }
+      else{
+      $aboutErr="Required";
+      }
 }
 ?>
 <!-- the end of php code-->
@@ -98,6 +140,7 @@ if(isset($_POST['submit'])){
    <label class="control-label col-sm-2" for="username">User name:</label>
       <div class="col-sm-10">
         <input type="text" name="username"> <br><br>
+          <span style="color: red">*<?php echo $usernameErr?></span><br><br>
       </div>
   </div>
      
@@ -105,6 +148,7 @@ if(isset($_POST['submit'])){
    <label class="control-label col-sm-2" for="password">Password:</label>
       <div class="col-sm-10">
         <input type="password" name="password"><br><br>
+          <span style="color: red">*<?php echo $passwordErr?></span><br><br>
       </div>
   </div>
      
@@ -112,6 +156,7 @@ if(isset($_POST['submit'])){
    <label class="control-label col-sm-2" for="password">Repeat Password:</label>
       <div class="col-sm-10">
         <input type="password" name="password"><br><br>
+          <span style="color: red">*<?php echo $passwordErr?></span><br><br>
       </div>
   </div>
     
@@ -119,6 +164,7 @@ if(isset($_POST['submit'])){
    <label class="control-label col-sm-2" for="copyrightno">Copyright Registration Number:</label>
       <div class="col-sm-10">
         <input type="text" name="copyrightno"> <br><br>
+          <span style="color: red">*<?php echo $copyrightErr?></span><br><br>
       </div>
   </div> 
     
@@ -127,6 +173,7 @@ if(isset($_POST['submit'])){
    <label class="control-label col-sm-2" for="region">Region of origin:</label>
       <div class="col-sm-10">
         <input type="text" name="region"> <br><br>
+         <span style="color: red">*<?php echo $regionErr?></span><br><br>
       </div>
   </div> 
     
