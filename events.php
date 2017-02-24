@@ -9,24 +9,33 @@
 		<!--Grid system to accomodate 3 events-->
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-lg-4 ">
 						<!-- inserting an upcoming event images in the first column of the grid-->
 						<a href="audience.jpeg" data-lightbox= "This Month">
 							<img src="audience.jpg" width="440px" height="300px" >
 						</a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-lg-4 ">
 						<!-- inserting an upcoming event images in the first column of the grid-->
 						<a href="album_launch.jpeg" data-lightbox= "This Month">
 							<img src="album_launch.jpg" width="440px" height="300px">
 						</a>
 				</div>
-				<div class="col-md-4" >
+				<div class="col-lg-4 " >
 						<!-- inserting an upcoming event images in the first column of the grid-->
 						<a href="audience.jpeg" data-lightbox= "This Month">
 							<img src="audience.jpg " width="440px" height="300px " style="margin-right:10px">
 						</a>
 				</div>
+			</div>
+			<!-- button linking homepage events section with primary events page -->
+			<div class="row">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4">
+					<button type="button" class="btn btn-primary btn-block active" aria-label="See More EVents" style="margin-top:10px">
+				Explore More Events
+				</div>
+				<a href="#"><div class="col-lg-4"></div></a>
 			</div>
 		</div>
 	</body>
