@@ -12,7 +12,7 @@
 				<div class="col-lg-4 ">
 						<!-- inserting an upcoming event images in the first column of the grid-->
 						<a href="audience.jpeg" data-lightbox= "This Month">
-							<img src="audience.jpg" width="440px" height="300px" >
+							<img src="audience.jpg" width="440px" height="300px">
 						</a>
 				</div>
 				<div class="col-lg-4 ">
@@ -23,8 +23,8 @@
 				</div>
 				<div class="col-lg-4 " >
 						<!-- inserting an upcoming event images in the first column of the grid-->
-						<a href="audience.jpeg" data-lightbox= "This Month">
-							<img src="audience.jpg " width="440px" height="300px " style="margin-right:10px">
+						<a href="dancehall.jpeg" data-lightbox= "This Month">
+							<img src="dancehall.jpg " width="440px" height="300px " style="margin-right:10px">
 						</a>
 				</div>
 			</div>
