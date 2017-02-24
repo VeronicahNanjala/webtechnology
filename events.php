@@ -32,10 +32,10 @@
 			<div class="row">
 				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
-					<button type="button" class="btn btn-primary btn-block active" aria-label="See More EVents" style="margin-top:10px">
-				Explore More Events
+					<a href="#"><button type="button" class="btn btn-primary btn-block active" aria-label="See More EVents" style="margin-top:10px">
+				</a>Explore More Events
 				</div>
-				<a href="#"><div class="col-lg-4"></div></a>
+				<div class="col-lg-4"></div>
 			</div>
 		</div>
 	</body>
