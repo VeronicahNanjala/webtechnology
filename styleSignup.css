@@ -1,4 +1,8 @@
-.body{
+body{
 
-	background-color: black;
+	background-color: skyblue;
+}
+
+.error{
+	color: red;
 }

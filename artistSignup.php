@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="styleSignup.css">
 
   </head>
-  <body style="background-color: skyblue">
+  <body style="background-color: skyblue;">
     <!-- the beginning of php code-->
 <?php
 // validating data entered by users 
@@ -48,6 +48,7 @@ $aob="";
 // these will be stored in the database
 $passwordEncrypt="";
 $validEmail="";
+$validWebsite="";
 
 // checking if the post method has been requested.
 // checking if the field data are not empty
@@ -152,10 +153,14 @@ if(isset($_POST['submit'])){
 
   if (isset($_POST['website']) && !empty($_POST['website'])){
       $website=$_POST['website'];
+        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+           $websiteErr = "Invalid URL"; 
+          }
       }
-      else{
-      $websiteErr="";
-      }      
+        else{
+        $validWebsite=$website;
+          } 
+      echo $validWebsite;     
 }
 ?>
 <!-- the end of php code-->
@@ -249,16 +254,17 @@ if(isset($_POST['submit'])){
   <div class="form-group">
    <label class="control-label col-sm-2" for="website">Website:</label>
       <div class="col-sm-10">
-        <input type="text" name="website" value="<?php echo htmlspecialchars($website);?>"> <br>
+        <input type="text" name="website" value="<?php echo htmlspecialchars($website);?>"> 
+        <span style="color: red">*<?php echo $websiteErr?></span><br><br>
       </div>
   </div>
    
   <div class="form-group">
    <label class="control-label col-sm-2" for="about">About you:</label>
       <div class="col-sm-10">
-        <textarea name="about" rows="4" cols="50">
+        <textarea name="about" rows="4" cols="50" required>
         <?php if(isset($about)){ echo htmlspecialchars($about);}?></textarea>
-          <span style="color: red">*<?php echo $aboutErr?></span><br><br>
+          <span style="color: red">*</span><br><br>
       </div>
   </div>
   
@@ -266,16 +272,20 @@ if(isset($_POST['submit'])){
    <label class="control-label col-sm-2" for="contact">Contact information:</label>
       <div class="col-sm-10">
         <textarea name="contact"  rows="4" cols="50">
-        <?php if(isset($contact)){echo htmlspecialchars($contact);}?></textarea><br></div>
+        <?php if(isset($contact)){echo htmlspecialchars($contact);}?></textarea>
+          <span style="color: red">*</span><br><br>
+        </div>
   </div>
    
  <div class="form-group">
    <label class="control-label col-sm-2" for="aob">Any other thing for fans:</label>
       <div class="col-sm-10">
         <textarea name="aob"  rows="4" cols="50">
-        <?php if (isset($aob)){echo htmlspecialchars($aob);}?></textarea><br><br></div></div>
-   <div><input type="submit" name="submit" class="btn btn-default">
-   </div><br><br>
+        <?php if (isset($aob)){echo htmlspecialchars($aob);}?></textarea>
+          <span style="color: red">*</span><br><br>
+        </div>
+      </div>
+   <div style="padding-left:63%"><input type="submit" name="submit"></div><br><br>
     Already have an account?<div class="btn btn-link"><a href="home.php">Sign in</a></div>
 
   </div>
