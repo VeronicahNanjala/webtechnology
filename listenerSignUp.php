@@ -3,7 +3,7 @@
 
 </head>
 <body>
-
+<!--A form for the listener to sign up-->
 <form name="myForm" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
 	<table style = "padding-top: 15%; margin:auto;">
 	<tr>
@@ -39,34 +39,42 @@
 
 	<tr>
 	<td></td>
-	<td style="padding-left: 35%"><input type="submit" value="Submit" ></td>
+	<td style="padding-left: 35%"><input type="submit" value="Sign up" ></td>
 	</tr>
 
 	</table>
 </form>
 
+<!--beginning of javascript code-->
+
 <script>
+//A function that validates contents entered by the user
 function validateForm() {
+	//check if name is not empty
     var x = document.forms["myForm"]["fname"].value;
     if (x == "") {
-        alert("First name must be filled out");
+        alert("Please enter your first name");
         return false;
     }
+   // check if surname is not empty
      var y = document.forms["myForm"]["fsurname"].value;
     if (y == "") {
-        alert("Email must be filled out");
+        alert("Please enter your surname");
         return false;
         }
+    //check if the email is not empty
          var z = document.forms["myForm"]["femail"].value;
     if (z == "") {
-        alert("Tell us your message");
+        alert("Please enter your email adress");
         return false;
     }
+    //check if username is not empty
      var a = document.forms["myForm"]["fusername"].value;
      if (a == "") {
         alert("Please enter a username");
         return false;
     }
+    //check if password is not empty
      var b = document.forms["myForm"]["fpassword"].value;
      if (b == "") {
         alert("Please nter password");
@@ -77,6 +85,7 @@ function validateForm() {
         alert("Confirm password");
         return false;
     }
+    //check if the passwords are the same
     if(c!=b){
     	alert("Password mismatch, please try again");
     	return false;
