@@ -9,7 +9,7 @@ Ngoma Music
 </head>
 
 <body>
-<form>
+<form name="ngoma" method="post">
 <header> 
 <h1 >
 Karibu
@@ -20,36 +20,23 @@ Karibu
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" id="uname" required>
     <input type="checkbox" checked="checked"> Remember Username<br>
-    <p id="error"></p><br>
+    <br>
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" id="psw" required>
-    <p id="error"></p><br>
-    <div class=helper>* The password should be atleast 8 characters long. </div>
+    <br>
+    <div class=helper>* The password should be atleast 6 characters long. </div>
 
-    <button type="button" onclick="validate()">Login as listener</button>
+    <button type="submit" name="userlogin" onclick="validate()">Login as listener</button>
     
 
-    <button type="button" onclick="validate()">Login an artist</button>
+    <button type="submit" name="artistlogin" onclick="validate()">Login an artist</button>
   
 
   <!--<div class="col_1" style="background-color:#f1f1f1">-->
-    <button type="button" onclick="" class="cancel">Cancel</button>
+    <button type="button" onclick=" " class="cancel">Cancel</button>
     <span class="Forgotpass">Forgot <a href="#">password?</a></span>
   </div>
  </form>
-<script>
-function validate() {
-	//Declaring the varaibles and getting the user input.
-    var username=document.getElementById("uname").value;
-    var password=document.getElementById("psw").value;
-    var errorMessage;
-
-    //Both usernane and password should not be empty.
-    if (username==" "||password=" ") {
-        text = "* This is a required field!";
-    } 
-    document.getElementById("error").innerHTML = text;
-}
-</script>
+ <script src="login.js"></script>
 </body>
 </html>
