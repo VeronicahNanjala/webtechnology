@@ -7,14 +7,12 @@ var username = document.getElementById("uname").value;
 var password = document.getElementById("psw").value;
 
 if ( username == "ngoma" && password == "music123"){
-alert ("Login successfully");
-//window.location = "x.html"; // Redirecting to other page.
-return false;
+ //window.location = "index.html"; // Redirecting to other page.
+ window.open("index.html");
 }
 else if(username==""){
 
 document.getElementById("uname").style.borderColor="red";
-
 }
 else if(password==""){
 
