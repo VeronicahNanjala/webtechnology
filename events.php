@@ -43,7 +43,7 @@
 						<a href="dancehall.jpeg" data-lightbox= "This Month">
 							<img src="dancehall.jpg " class="img-rounded" width="440px" height="300px ">
 						</a>
-						<div class="panel panel-default">
+						<div class="panel panel-default" style="width:500px">
 							<div class="panel-body">
 								<div class="caption">
 									<h3>Ultra Music Festival Johburg</h3>

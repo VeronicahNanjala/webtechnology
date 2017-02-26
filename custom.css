@@ -1,5 +1,8 @@
 /* styling the backgound colour of web application*/
-body {
+html body {
+	margin:0px;
+	padding:0px;
+	border:0px;
 	background-color: #183f4e;
 	
 }
@@ -19,13 +22,14 @@ body {
 .btn {
 	border-radius:0px;
 	margin-top:10px;
+	font-size:16;
 }
 /*styling panel class encapsulating the text accompanying event posters*/
 .panel {
 	background-color:transparent;
 	width:440px;
-	border-color:#c3c3c3;
+	border:0px;
 }
 .jumbotron {
-	background-color:#617381;
+	color:transparent;
 }
