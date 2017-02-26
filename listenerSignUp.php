@@ -14,6 +14,9 @@
     cursor: pointer;
     float: right;
 }
+.td {
+    color:white;
+}
 </style>
 </head>
 
@@ -78,36 +81,36 @@
 <!--A form for the listener to sign up-->
 <div style = "margin-top:100px">
 <form name="myForm" style = "background-color: #4e3f3e;  width :50% ;margin: auto; color: white;"  action="/action_page_post.php" onsubmit="return validateForm()" method="post">
-	<table style = "padding-top: 15%; margin:auto; color: white;">
+	<table style = "padding-top: 15%; margin:auto;">
 <h1 align= "center" style= "color: white;">Sign Up</h1>
 	<tr>
-	<td> First name</td>
+	<td class = "td" > First name</td>
 	<td> <input type="text"  name="fname" size="52%"> <br><br></td>
 	</tr>
 
 	<tr>
-	<td> Surname</td>
+	<td class = "td"> Surname</td>
 	<td> <input type="text" name="fsurname" size="52%"> <br><br></td>
 	</tr>
 
 
 	<tr>
-	<td> Email</td>
+	<td class = "td"> Email</td>
 	<td><input type="text" name ="femail" size="52%"><br><br></td>
 	</tr>
 
 	<tr>
-	<td> Username</td>
+	<td class = "td"> Username</td>
 	<td> <input type="text" name="fusername" size="52%"> <br><br></td>
 	</tr>
 
 	<tr>
-	<td>Password</td>
+	<td class = "td">Password</td>
 	<td><input type="password" name="fpassword" size="52%"><br><br></td>
 	</tr>
 
 	<tr>
-	<td>Confirm Password</td>
+	<td class = "td">Confirm Password</td>
 	<td><input type="password" name="fcpassword" size="52%"><br><br></td>
 	</tr>
 

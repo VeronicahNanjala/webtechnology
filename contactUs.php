@@ -14,6 +14,9 @@
     cursor: pointer;
     float: right;
 }
+.td {
+    color:white;
+}
 </style>
 </head>
 
@@ -63,7 +66,7 @@
 		<li><a href="#about"> About </a></li>
 		<li><a href="#works"> Sign Up </a></li>
 		<li><a href="Login.html"> Sign In</a></li>
-		<li><a href="#contact"> Contact Us </a></li>
+		<li><a href="contactUs.php"> Contact Us </a></li>
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
 	</div>
@@ -75,21 +78,21 @@
 
 <body>
 <!--A form for the contact us page-->
-<div style = "margin-top:100px; color: white;"> 
-<form name="myForm" style = "background-color: #4e3f3e; color: white; width :50%; margin: auto" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
-	<table style = "padding-top: 15%; margin:auto; color:white">
+<div style = "margin-top:100px; "> 
+<form name="myForm" style = "background-color: #4e3f3e;  width :50%; margin: auto" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
+	<table style = "padding-top: 15%; margin:auto; ">
 	<h1 align="center" style= "color: white;"> Contact Us </h1>
 	<tr>
-	<td> Name</td>
+	<td class = "td"> Name</td>
 	<td> <input type="text" name="fname" size="42%"> <br><br></td>
 	</tr>
 
 	<tr>
-	<td> Email</td>
+	<td class = "td"> Email</td>
 	<td><input type="text" name ="femail" size="42%"><br><br></td>
 	</tr>
 		<tr>
-	<td>Message</td>
+	<td class = "td">Message</td>
 	<td><textarea type="text" name="fmessage" rows="6" cols="40"></textarea><br><br></td>
 	</tr>
 
