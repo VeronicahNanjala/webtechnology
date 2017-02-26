@@ -7,8 +7,9 @@ var username = document.getElementById("uname").value;
 var password = document.getElementById("psw").value;
 
 if ( username == "ngoma" && password == "music123"){
- //window.location = "index.html"; // Redirecting to other page.
+ //window.moveTo("index.html");
  window.open("index.html");
+ window.close("index.html")
 }
 else if(username==""){
 
@@ -19,7 +20,7 @@ else if(password==""){
 document.getElementById("psw").style.borderColor="red";
 
 }
-else if(!/^\w+$/.test( username )) {
+else if(!/^[a-zA-Z\-]+$/.test( username )) {
     alert("Username must contain only letters, numbers and underscores!");
     }
 else if(password.length<6){
