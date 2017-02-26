@@ -51,18 +51,18 @@
 				<div> <!--first row-->
 					<div class="row">
 						<div class="col-lg-4">
-							<a href="audience.jpg" class="fancybox">
-								<img src="audience.jpg " width="440 px" height="380px">
+							<a href="chalewote.jpg" class="fancybox">
+								<img src="chalewote.jpg" width="440 px" height="380px">
 							</a>
 						</div>
 						<div class="col-lg-4">
-							<a href="dancehall.jpg" data-lightbox="May" class="fancybox">
-								<img src="dancehall.jpg" width="440 px" height="380px" >
+							<a href="slam.jpg" data-lightbox="May" class="fancybox">
+								<img src="slam.jpg" width="440 px" height="380px" >
 							</a>
 						</div>
 						<div class="col-lg-4">
-							<a href="album_launch.jpg" data-lightbox="May" class="fancybox">
-								<img src="album_launch.jpg" width="440 px" height="380px" >
+							<a href="lamu.jpg" data-lightbox="May" class="fancybox">
+								<img src="lamu.jpg" width="440 px" height="380px" >
 							</a>
 						</div>
 					</div>
@@ -74,18 +74,18 @@
 			<div> <!--second row-->
 				<div class="row">
 					<div class="col-lg-4">
-						<a href="audience.jpg" data-lightbox="May" class="fancybox">
-							<img src="audience.jpg" width="440 px" height="380px">
+						<a href="vic.jpg" data-lightbox="May" class="fancybox">
+							<img src="vic.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="dancehall.jpg" data-lightbox="May" class="fancybox">
-							<img src="dancehall.jpg" width="440 px" height="380px" >
+						<a href="muthoni.jpg" data-lightbox="May" class="fancybox">
+							<img src="muthoni.jpg" width="440 px" height="380px" >
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="album_launch.jpg" data-lightbox="May" class="fancybox">
-							<img src="album_launch.jpg" width="440 px" height="380px">
+						<a href="urban.jpg" data-lightbox="May" class="fancybox">
+							<img src="urban.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 				</div>
@@ -97,18 +97,18 @@
 			<div> <!--third row-->
 				<div class="row">
 					<div class="col-lg-4">
-						<a href="audience.jpg" data-lightbox="May" class="fancybox">
-							<img src="audience.jpg" width="440 px" height="380px"">
+						<a href="mazwai.jpg" data-lightbox="May" class="fancybox">
+							<img src="mazwai.jpg" width="440 px" height="380px"">
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="dancehall.jpg" data-lightbox="May" class="fancybox">
-							<img src="dancehall.jpg" width="440 px" height="380px">
+						<a href="mask.jpg" data-lightbox="May" class="fancybox">
+							<img src="mask.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="album_launch.jpg" data-lightbox="May" class="fancybox">
-							<img src="album_launch.jpg" width="440 px" height="380px">
+						<a href="jazz.jpg" data-lightbox="May" class="fancybox">
+							<img src="jazz.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 				</div>
@@ -120,18 +120,18 @@
 			<div> <!--Fourth  row-->
 				<div class="row">
 					<div class="col-lg-4" data-lightbox="May">
-						<a href="audience.jpg" class="fancybox" >
-							<img src="audience.jpg" width="440 px" height="380px">
+						<a href="arab.jpg" class="fancybox" >
+							<img src="arab.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4" data-lightbox="May">
-						<a href="dancehall.jpg" class="fancybox">
-							<img src="dancehall.jpg" width="440 px" height="380px">
+						<a href="nai.jpg" class="fancybox">
+							<img src="nai.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4" data-lightbox="May">
-						<a href="album_launch.jpg" class="fancybox" >
-							<img src="album_launch.jpg" width="440 px" height="380px">
+						<a href="zenzibar.jpg" class="fancybox" >
+							<img src="zanzibar.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 				</div>
