@@ -9,219 +9,169 @@
 <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<!-- my css -->
-    <link rel="stylesheet" type="text/css" href="styleSignup.css">
-
   </head>
-  <body style="background-color: skyblue;">
-    <!-- the beginning of php code-->
-<?php
-// validating data entered by users 
-// varibles to indicate required fields 
-$nameErr="";
-$emailErr="";
-$userNameErr="";
-$passwordErr="";
-$copyrightErr="";
-$regionErr="";
-$musicTypeErr="";
-$websiteErr="";
-$aboutErr="";
-$contactErr="";
-$birthdateErr="";
+  <body>
 
-// variables to store values
-$name="";
-$email="";
-$username="";
-$password="";
-$copyrightno="";
-$region="";
-$musictype="";
-$birthdate="";
-$website="";
-$about="";
-$contact="";
-$aob="";
-
-// variable that holds encrypted password
-// these will be stored in the database
-$passwordEncrypt="";
-$validEmail="";
-$validWebsite="";
-
-// checking if the post method has been requested.
-// checking if the field data are not empty
-if(isset($_POST['submit'])){
-  if (isset($_POST['name']) && !empty($_POST['name'])){
-    $name=$_POST['name'];
-  }
-     else{
-      $nameErr="Name is required";
-      }
-
-  if (isset($_POST['email']) && !empty($_POST['email'])){
-         $email=$_POST['email'];
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-         $emailErr = "Invalid email format"; 
-         }
-         else{
-         $validEmail=$email;
-         }
+<script>
+  function validateEntries(){
+  var validName = document.forms["artForm"]["name"].value;
+    if (validName != "") {
+      var validChars = /^[A-Za-z]+$/;
+      if (validName.value.match(validChars)) {
+        return true;
+      }else 
+      alert("Enter a correct name");
+      return false;
     }
-      else{
-      $emailErr="Email is required";
-      }
 
-  if (isset($_POST['username']) && !empty($_POST['username'])){
-     $username=$_POST['username'];
-     }
-      else{
-      $userNameErr="Username is required";
-      }
+   var validEmail = document.forms["artForm"]["email"].value;
+    if (validEmail !="") {
+      var atSign = validEmail.indexOf("@");
+      var dotposition = validEmail.lastIndexOf(".");
+      if (atSign<1 || dotposition<dotposition+2 || dotposition+2>=x.length) {
+        alert("Enter a correct name");
+        return false;
+      }else 
+      return false;
+    }
 
-  if (isset($_POST['copyrightno']) && !empty($_POST['copyrightno'])){
-      $copyrightno=$_POST['copyrightno'];
-     }
-      else{
-      $copyrightErr="Copyright is required";
-      }
+    var validUsername = document.forms["artForm"]["username"].value;
+    if (validUsername != "") {
+      var validChars =/^[0-9a-zA-Z]+$/;
+      if (validUsername.value.match(validChars)) {
+        return true;
+      }else 
+      alert("Enter a correct user name");
+      return false;
+    }
 
-  if (isset($_POST['region']) && !empty($_POST['region'])){
-      $region=$_POST['region'];
-     }
-      else{
-      $regionErr="Region is required";
+   var validPassword = document.forms["artForm"]["password"].value;
+    if (validPassword == "") {
+      var passValidate=^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$+;
+      if (validPassword.value.match(passValidate)) {
+          return true;
+        }else
+        alert("Minimum 8 characters, at least 1 Alphabet and 1 Number");
+        return false;
       }
+var confirmedPass = document.forms["artForm"]["confirmpassword"].value;
+  if (confirmedPass!="") {
+    var confirm = document.forms["artForm"]["password"].value;
+    if (confirmedPass==confirm){
+        return true;
+    }else
+    alert("Password missmatch");
+    return false;
+  }
+  // var validcopyrightno = document.forms["artForm"]["copyrightno"].value;
+  //   if (validcopyrightno == "") {
+  //     alert("Copyright is required");
+  //   }
 
-  if (isset($_POST['musictype']) && !empty($_POST['musictype'])){
-      $musictype=$_POST['musictype'];
-      }
-      else{
-      $musicTypeErr="The type of your music is required";
-      }
+  var validregion = document.forms["artForm"]["region"].value;
+    if (validregion != "") {
+      var validChars = /^[A-Za-z]+$/;
+      if (validregion.value.match(validChars)) {
+        return true;
+      }else 
+      alert("Enter a correct region");
+      return false;
+    }
 
-   if (isset($_POST['birthdate']) && !empty($_POST['birthdate'])){
-      $birthdate=$_POST['birthdate'];
-      }
-      else{
-      $birthdateErr="Required";
-      }
+  var validmusictype = document.forms["artForm"]["musictype"].value;
+    if (validmusictype != "") {
+      var validChars = /^[A-Za-z]+$/;
+      if (validmusictype.value.match(validChars)) {
+        return true;
+      }else 
+      alert("Enter the correct type of your music");
+      return false;
+    }
 
-  if (isset($_POST['about']) && !empty($_POST['about'])){
-      $about=$_POST['about'];
-      }
-      else{
-      $aboutErr="Required";
-      }
+  var validbirthdate = document.forms["artForm"]["birthdate"].value;
+    if (validbirthdate != "") {
+      var pattern =/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+      if (pattern.test(validbirthdate)) {
+          return true;
+      }else
+      alert("Input corret date format");
+      return false
+    }
 
-  if (isset($_POST['password']) && !empty($_POST['password'])){
-   // encrypting password and checking strength
-      $password=$_POST['password'];
-         if (strlen($password) < 8) {
-              $passwordErr = "Password too short! At least 8 characters";
-          }
+  var validwebsite = document.forms["artForm"]["website"].value;
+    if (validwebsite != "") {
+   var urls = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+   if (urls.test(validwebsite)) {
+      return true;
+   }else 
+      alert("Website is required. If you dont have one, enter url for one of your socila media accounts");
+      return false;
+    }  
 
-          if (!preg_match("#[0-9]+#", $password)) {
-              $passwordErr = "Password must include at least one number!";
-          }
+var validabout = document.forms["artForm"]["about"].value;
+    // if (validabout == "") {
+    //   alert("Write something about yourself");
+    // }  
 
-          if (!preg_match("#[a-zA-Z]+#", $password)) {
-              $passwordErr = "Password must include at least one letter!";
-          } 
-            else{
-               $passwordEncrypt=password_hash($password,PASSWORD_DEFAULT);
-            }    
+var validcontact = document.forms["artForm"]["contact"].value;
+    if (validcontact == "") {
+      alert("Write your contact information");
+     } 
 
-      }
-      else{
-      $passwordErr="Required";
-      }
-
-  if (isset($_POST['contact']) && !empty($_POST['contact'])){
-      $contact=$_POST['contact'];
-      }
-      else{
-      $contactErr="";
-      }
-  if (isset($_POST['aob']) && !empty($_POST['aob'])){
-      $aob=$_POST['aob'];
-      }
-      else{
-      $aobErr="";
-      }
-
-  if (isset($_POST['website']) && !empty($_POST['website'])){
-      $website=$_POST['website'];
-        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-           $websiteErr = "Invalid URL"; 
-          }
-      }
-        else{
-        $validWebsite=$website;
-          } 
-      echo $validWebsite;     
-}
-?>
-<!-- the end of php code-->
-
-<!--Header-->
-<div class="page-header">
-  <h1 align="center" >WELCOME TO NGOMA MUSIC</h1>
-</div>
+var validaob = document.forms["artForm"]["aob"].value;
+    // if (validaob == "") {
+    //   alert("Write sothing unique about you");
+    // } 
+return true;
+  }
+</script>
 
 <!-- Form for data entry-->
-<form method="post" action="" class="form-horizontal" style="background-color: white;width: 50%;margin: auto;" >
+<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onclick ="return validateEntries()">
   <div align="center">
   <h1> SIGN UP NOW</h1>
   </div>
   <div>
 
   <div class="form-group">
-   <label class="control-label col-sm-2" for="name">Name:</label>
-      <div class="col-sm-10">
-        <input type="text" name="name" value="<?php echo htmlspecialchars($name);?>">
-          <span style="color: red">*<?php echo $nameErr?></span><br><br>
+    <label class="control-label col-sm-2" for="email">Name:</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="name" placeholder="Full Name" required>
       </div>
-  </div>
+  </div>  
 
   <div class="form-group">
    <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-        <input type="text" name="email" value="<?php echo htmlspecialchars($email);?>"> 
-          <span style="color: red">*<?php echo $emailErr?></span><br><br>
+        <input type="text" class="form-control" name="email" required placeholder="Email"> 
       </div>
   </div>
      
   <div class="form-group">
    <label class="control-label col-sm-2" for="username">User name:</label>
       <div class="col-sm-10">
-        <input type="text" name="username" value="<?php echo htmlspecialchars($username);?>"> 
-          <span style="color: red">*<?php echo $userNameErr?></span><br><br>
+        <input type="text" class="form-control" name="username" required placeholder="Username"> 
       </div>
   </div>
      
   <div class="form-group">
    <label class="control-label col-sm-2" for="password">Password:</label>
       <div class="col-sm-10">
-        <input type="password" name="password" value="<?php echo htmlspecialchars($password);?>">
-          <span style="color: red">*<?php echo $passwordErr?></span><br><br>
+        <input type="password" class="form-control" name="password" required placeholder="Password">
       </div>
   </div>
      
   <div class="form-group">
-   <label class="control-label col-sm-2" for="password">Repeat Password:</label>
+   <label class="control-label col-sm-2" for="confirmpassword">Confirm Password:</label>
       <div class="col-sm-10">
-        <input type="password" name="password" value="<?php echo htmlspecialchars($password);?>">
-          <span style="color: red">*<?php echo $passwordErr?></span><br><br>
+        <input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirm Password">
       </div>
   </div>
     
   <div class="form-group">
    <label class="control-label col-sm-2" for="copyrightno">Copyright Registration Number:</label>
       <div class="col-sm-10">
-        <input type="text" name="copyrightno" value="<?php echo htmlspecialchars($copyrightno);?>">
-          <span style="color: red">*<?php echo $copyrightErr?></span><br><br>
+        <input type="text" class="form-control" name="copyrightno" required placeholder="Copyright">
       </div>
   </div> 
     
@@ -229,24 +179,21 @@ if(isset($_POST['submit'])){
  <div class="form-group">
    <label class="control-label col-sm-2" for="region">Region of origin:</label>
       <div class="col-sm-10">
-        <input type="text" name="region" value="<?php echo htmlspecialchars($region);?>"> 
-         <span style="color: red">*<?php echo $regionErr?></span><br><br>
+        <input type="text" class="form-control" name="region" required placeholder="Region"> 
       </div>
   </div> 
     
  <div class="form-group">
    <label class="control-label col-sm-2" for="musictype">Type of music:</label>
       <div class="col-sm-10">
-        <input type="text" name="musictype" value="<?php echo htmlspecialchars($musictype);?>"> 
-          <span style="color: red">*<?php echo $musicTypeErr?></span><br><br>
+        <input type="text" class="form-control" name="musictype" required placeholder="Music type"> 
       </div>
   </div>  
   
  <div class="form-group">
    <label class="control-label col-sm-2" for="birthdate">Date of birth:</label>
       <div class="col-sm-10">
-        <input type="text" name="birthdate" value="<?php echo htmlspecialchars($birthdate);?>"> 
-          <span style="color: red">*<?php echo $birthdateErr?></span><br><br>
+        <input type="text" class="form-control" name="birthdate" required placeholder="dd/mm/yyyy"> 
       </div>
   </div>  
    
@@ -254,38 +201,31 @@ if(isset($_POST['submit'])){
   <div class="form-group">
    <label class="control-label col-sm-2" for="website">Website:</label>
       <div class="col-sm-10">
-        <input type="text" name="website" value="<?php echo htmlspecialchars($website);?>"> 
-        <span style="color: red">*<?php echo $websiteErr?></span><br><br>
+        <input type="text" class="form-control" name="website" required placeholder="www.something"> 
       </div>
   </div>
    
   <div class="form-group">
    <label class="control-label col-sm-2" for="about">About you:</label>
       <div class="col-sm-10">
-        <textarea name="about" rows="4" cols="50" required>
-        <?php if(isset($about)){ echo htmlspecialchars($about);}?></textarea>
-          <span style="color: red">*</span><br><br>
+        <textarea name="about" class="form-control" rows="4" cols="50" required placeholder="Write about you"></textarea>
       </div>
   </div>
   
  <div class="form-group">
    <label class="control-label col-sm-2" for="contact">Contact information:</label>
       <div class="col-sm-10">
-        <textarea name="contact"  rows="4" cols="50">
-        <?php if(isset($contact)){echo htmlspecialchars($contact);}?></textarea>
-          <span style="color: red">*</span><br><br>
+        <textarea name="contact" class="form-control" rows="4" cols="50" required placeholder="Contact information"></textarea>
         </div>
   </div>
    
  <div class="form-group">
    <label class="control-label col-sm-2" for="aob">Any other thing for fans:</label>
       <div class="col-sm-10">
-        <textarea name="aob"  rows="4" cols="50">
-        <?php if (isset($aob)){echo htmlspecialchars($aob);}?></textarea>
-          <span style="color: red">*</span><br><br>
+        <textarea name="aob" class="form-control" rows="4" cols="50" required placeholder=" Something unique about yourself"></textarea>
         </div>
       </div>
-   <div style="padding-left:63%"><input type="submit" name="submit"></div><br><br>
+   <div style="float: right; color: black;"><input type="submit" name="submit" onclick="return validateEntries()"></div><br><br>
     Already have an account?<div class="btn btn-link"><a href="home.php">Sign in</a></div>
 
   </div>
@@ -301,4 +241,4 @@ if(isset($_POST['submit'])){
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
-</html>
+</html>                             
