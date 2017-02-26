@@ -49,15 +49,15 @@
 
      
 	//navigation
-	$('.navigation').onePageNav({
-		begin: function() {
-			console.log('start');
-		},
-		end: function() {
-			console.log('stop');
-		},
-			scrollOffset: 0		
-	});
+	// $('.navigation').onePageNav({
+	// 	begin: function() {
+	// 		console.log('start');
+	// 	},
+	// 	end: function() {
+	// 		console.log('stop');
+	// 	},
+	// 		scrollOffset: 0		
+	// });
 	
 		// fancybox
 		$(".fancybox").fancybox({				
