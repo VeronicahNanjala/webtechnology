@@ -39,40 +39,64 @@
 			<div> <!--first row-->
 				<div class="row">
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div> <!--second row-->
 				<div class="row">
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div> <!--third row-->
 				<div class="row">
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div> <!--Fourth  row-->
 				<div class="row">
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 					<div class="col-lg-4">
+						<a>
+						</a>
 					</div>
 				</div>
 			</div>
