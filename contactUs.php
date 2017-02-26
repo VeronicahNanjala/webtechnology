@@ -1,6 +1,20 @@
 <html>
 <head>
-
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+</style>
 </head>
 
 <!-- styles -->
@@ -81,7 +95,7 @@
 
 	<tr>
 	<td></td>
-	<td style="padding-left: 69.5%"><input type="submit" value="Submit" ></td>
+	<td ><input type="submit" class = "button" value="Submit" ></td>
 	</tr>
 
 	</table>
