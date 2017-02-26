@@ -15,24 +15,31 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="Home.css">
 		<link rel="stylesheet" type="text/css" href="landing.css">
+		<style>	
+			#lst a:hover{
+				color:green;
+			}
+		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
 		<div class="container-fluid">
 		    <div class="navbar-header">
-				<a class="navbar-brand" href="#"><h1>Ngoma<h1></a>
+				<a class="navbar-brand"><h1>Ngoma<h1></a>
 			</div>
 			<div>
-			<!--<ul class="nav navbar-nav">
-				<li id="hm"><a>Home</a></li>
-				<li id="slash"><a>|</a></li>
-				
-			</ul>-->
 			<div class="row">
 			  <div class="col-md-9"></div>
 			  <div class="col-md-3"></div>
-			  <button type="button" class="btn btn-default btn-sm" style="margin-top: 10px;" >Sign up</button>
-			  <button type="button" class="btn btn-default btn-sm" style="margin-top: 10px;" >Create account</button>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="lst"><a href="index.html #intro">HOME</a></li>
+					<li id="lst"><a href="index.html #about">ABOUT</a></li>
+					<li id="lst"><a href="index.html #works">LOGIN</a></li>
+					<li id="lst"><a href="index.html #works">SIGNUP</a></li>
+					<li id="lst"><a href="index.html #events">EVENTS</a></li>
+					<li id="lst"><a href="index.html #contact">CONTACT US</a></li>
+				
+				</ul>
 			</div>
 		</div>
 		</nav>

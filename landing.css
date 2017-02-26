@@ -6,6 +6,18 @@ body {
 	background-color:#0C090A;
 	
 }
+.navbar-brand{
+	font-family:Galena;
+	
+}
+
+#lst a{
+	color: white;
+	font-style:bold;
+	margin-top:18px;
+	margin-right:2px;
+}
+
 .navbar h1{
 	color:white;
 }
