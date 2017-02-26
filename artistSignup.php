@@ -24,6 +24,21 @@
 ================================================================================ -->
 <script src="assets/js/modernizr.custom.js"></script>
 
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float:right;
+}
+</style>
 </head>
 
       <!-- Body Section begins here -->
@@ -165,7 +180,7 @@
           <textarea name="aob" class="form-control" rows="4" cols="50" required placeholder=" Something unique about yourself" pattern="[a-zA-Z0-9\s]+" title="Only letters, numbers and spaces"></textarea>
           </div>
         </div>
-     <div style="float: right; color: black;"><input type="submit" name="Sign up" onclick="checkPasswords()"></div><br><br>
+     <div style="float: right; color: black;"><input class="button" type="submit" name="Sign up" onclick="checkPasswords()"></div><br><br>
       Already have an account?<div class="btn btn-link"><a href="home.php">Sign in</a></div>
 
     </div>
