@@ -4,11 +4,12 @@
 </head>
 <body>
 <!--A form for the listener to sign up-->
-<form name="myForm" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
-	<table style = "padding-top: 15%; margin:auto;">
+<form name="myForm" style = "background-color: #4e3f3e;  width :50% ;margin: auto; color: white;"  action="/action_page_post.php" onsubmit="return validateForm()" method="post">
+	<table style = "padding-top: 15%; margin:auto; color: white;">
+<h1 align= "center">Sign Up</h1>
 	<tr>
 	<td> First name</td>
-	<td> <input type="text" name="fname" size="52%"> <br><br></td>
+	<td> <input type="text"  name="fname" size="52%"> <br><br></td>
 	</tr>
 
 	<tr>
