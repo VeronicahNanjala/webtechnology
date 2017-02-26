@@ -1,16 +1,8 @@
-
+/* backgorund color for canvas*/
 body {
 	background-color:platinum;
 }
-.navbar{
-	background-color:#0C090A;
-	
-}
-.navbar-brand{
-	font-family:Galena;
-	
-}
-
+/*styling nav bar menu*/
 #lst a{
 	color: white;
 	font-style:bold;
@@ -21,13 +13,16 @@ body {
 .navbar h1{
 	color:white;
 }
+/*color and font to improve appearance of sections before gallery*/
 .jumbotron{
 	color:#2B547E;
 	font-family:Rockwell;
 	text-align:center;
 	background-color:transparent;
-	height: 30px;
+	height: 50px;
 }
+
+/*hover to indicate a mouse movement*/
 .btn:hover{
 	color:#008080;
 }
