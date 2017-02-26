@@ -17,7 +17,7 @@
 // this method is validating the data provided by the user 
 // this javascript code stopped working on the form. So I used html5 elements for validation on the form. I am still working on this
   /*function validateEntries(){
-  var validName = document.forms["artForm"]["name"].value;
+  var validName = document.forms["artForm"]["fname"].value;
     if (validName != "") {
       var validChars = /^[A-Za-z]+$/;
       if (validName.value.match(validChars)) {
@@ -127,33 +127,28 @@ var validaob = document.forms["artForm"]["aob"].value;
     // } 
   }*/
 
-// checking if the passwords entered are similar
-  var password = document.getElementById("pass1");
-  var confirm_password = document.getElementById("pass2");
-  function checkPasswords(){
-   if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Your passwords are not matching");
-      } else {
-        confirm_password.setCustomValidity('');
-      }
-  }
-    password.onchange = checkPasswords();
-    confirm_password.onkeyup = checkPasswords();
 </script>
 
 <!-- Form for data entry-->
-<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit =" checkPasswords()">
+<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit =" validateEntries()">
   <div align="center">
   <h1> SIGN UP NOW</h1>
   </div>
   <div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Name:</label>
+    <label class="control-label col-sm-2" for="fname">First name:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" name= "name" placeholder="Full Name" required autofocus pattern="[a-zA-Z\s]+" title="Only letters and spaces">
+        <input type="text" class="form-control" name= "fname" placeholder="Full Name" required autofocus pattern="[a-zA-Z]+" title="Only letters">
       </div>
-  </div>  
+  </div> 
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="lname">Last name:</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name= "lname" placeholder="Full Name" required autofocus pattern="[a-zA-Z]+" title="Only letters">
+      </div>
+  </div>   
 
   <div class="form-group">
    <label class="control-label col-sm-2" for="email">Email:</label>
@@ -165,7 +160,7 @@ var validaob = document.forms["artForm"]["aob"].value;
   <div class="form-group">
    <label class="control-label col-sm-2" for="username">User name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="username" required placeholder="Username" maxlength="8" minlength="6" pattern="[a-zA-Z0-9]+" title="Only letters and numerics"> 
+        <input type="text" class="form-control" name="username" required placeholder="Username" minlength="6" pattern="[a-zA-Z0-9]+" title="Only letters and numerics"> 
       </div>
   </div>
      
@@ -175,14 +170,7 @@ var validaob = document.forms["artForm"]["aob"].value;
         <input type="password" id="pass1" class="form-control" name="password" required placeholder="Password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
       </div>
   </div>
-     
-  <div class="form-group">
-   <label class="control-label col-sm-2" for="confirmpassword">Confirm Password:</label>
-      <div class="col-sm-10">
-        <input type="password" id="pass2" class="form-control"  name="confirmpassword" required placeholder="Confirm Password" minlength="8"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-      </div>
-  </div>
-    
+
   <div class="form-group">
    <label class="control-label col-sm-2" for="copyrightno">Copyright Registration Number:</label>
       <div class="col-sm-10">
@@ -240,7 +228,7 @@ var validaob = document.forms["artForm"]["aob"].value;
         <textarea name="aob" class="form-control" rows="4" cols="50" required placeholder=" Something unique about yourself" pattern="[a-zA-Z0-9\s]+" title="Only letters, numbers and spaces"></textarea>
         </div>
       </div>
-   <div style="float: right; color: black;"><input type="submit" name="submit" onclick="checkPasswords()"></div><br><br>
+   <div style="float: right; color: black;"><input type="submit" name="Sign up" onclick="checkPasswords()"></div><br><br>
     Already have an account?<div class="btn btn-link"><a href="home.php">Sign in</a></div>
 
   </div>
