@@ -53,10 +53,10 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
 					  <ul class="nav navbar-nav navbar-right">
-						<li class="current"><a href="index.html #intro"> Home </a></li>
+						<li class="current"><a href="home.html #intro"> Home </a></li>
 						<li><a href="index.html #about"> About </a></li>
 						<li><a href="index.html #events">Events</a><li>
-						<li><a href="index.html #contact"> Contact Us </a></li>
+						<li><a href="contactUs.php.html"> Contact Us </a></li>
 					  </ul></nav>
 					</div> <!-- /.navbar-collapse -->
 					</div>
