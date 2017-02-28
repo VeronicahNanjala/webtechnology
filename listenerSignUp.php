@@ -63,8 +63,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="home.html"> Home </a></li>
-        <li><a href="contactUs.php"> Contact Us </a></li>
+        <li><a href="index.html"> Home </a></li>
+        <li><a href="contactUs.html"> Contact Us </a></li>
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
     </div>
@@ -77,7 +77,7 @@
 <body>
 <!--A form for the listener to sign up-->
 <div style = "margin-top:100px">
-<form name="myForm" style = "background-color: #4e3f3e;  width :50% ;margin: auto; color: white;"  action="/action_page_post.php" onsubmit="return validateForm()" method="post">
+<form name="myForm" style = "background-color: #4e3f3e;  width :50% ;margin: auto; color: white;"  action="home.html" onsubmit="return validateForm()" method="post">
 	<table style = "padding-top: 15%; margin:auto;">
 <h1 align= "center" style= "color: white;">Sign Up</h1>
 	<tr>
