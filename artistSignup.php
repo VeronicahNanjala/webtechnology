@@ -45,8 +45,138 @@
 <body>
 
 <<?php 
+// varibles to hold data entered by the artist into the database
+  $firstname='';
+  $lastname='';
+  $email='';
+  $username='';
+  $pass='';
+  $copyrightnum='';
+  $region='';
+  $musictype='';
+  $dob='';
+  $website='';
+  $about='';
+  $contactinfo='';
+  $extraInfo='';
 
+      // storing data into the variables 
+      if (isset($_POST['submit'])){
+        // this variable is true if the user enters correct information. it is false if the information is not valid. 
+        $ok=true;
 
+        /*
+          take data from the form and store it in the variables that will later be put in the database
+        */
+         if (!isset($_POST['fname']) || $_POST['fname'] === '') {
+           $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $firstname=$_POST['fname'];
+             }
+
+         if (!isset($_POST['lname']) || $_POST['lname'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $lastname=$_POST['lname'];
+             }
+
+         if (!isset($_POST['email']) || $_POST['email'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $email=$_POST['email'];
+             }
+
+         if (!isset($_POST['username']) || $_POST['username'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $username=$_POST['username'];
+             }
+
+         if (!isset($_POST['password']) || $_POST['password'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $pass=$_POST['password'];
+             }
+
+         if (!isset($_POST['copyrightno']) || $_POST['copyrightno'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $copyrightnum=$_POST['copyrightno'];
+             }
+
+         if (!isset($_POST['region']) || $_POST['region'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $region=$_POST['region'];
+             }
+
+         if (!isset($_POST['musictype']) || $_POST['musictype'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $musictype=$_POST['musictype'];
+             }
+
+         if (!isset($_POST['birthdate']) || $_POST['birthdate'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $dob=$_POST['birthdate'];
+             }
+
+         if (!isset($_POST['website']) || $_POST['website'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $website=$_POST['website'];
+             }
+
+         if (!isset($_POST['about']) || $_POST['about'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $about=$_POST['about'];
+             }
+
+         if (!isset($_POST['contact']) || $_POST['contact'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $contactinfo=$_POST['contact'];
+             }
+
+         if (!isset($_POST['aob']) || $_POST['aob'] === '') {
+          $ok = false;
+            //do nothing. this validation has been taken care of in the form 
+         }
+             else{
+              $extraInfo=$_POST['aob'];
+             }
+          // when all the data has been put into the variables. 
+          // start inserting 
+      if ($ok) {
+         
+         }
+    }    
 
  ?>
 
@@ -89,7 +219,7 @@
 <!-- Form for data entry-->
 
 <div style="margin-top: 100px">
-  <form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit =" validateEntries()">
+  <form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post">
     <div align="center">
     <h1 style="color: white;"> SIGN UP NOW</h1>
     </div>
