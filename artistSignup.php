@@ -174,7 +174,35 @@
           // when all the data has been put into the variables. 
           // start inserting 
       if ($ok) {
-         
+         // connection to the database 
+         $dbcon= mysqli_connect('localhost','root' ,'' ,'webtechclass');
+
+         // if the connection failed, end the program 
+         if (!$dbcon) {
+              echo "Failed cionnection";
+              exit();
+            }
+        // if the connection is successful, go ahead and add data to the database
+              else{
+                echo "Connected successfully";
+        // write query to insert data
+            $sql= sprintf("INSERT INTO artistsignup(firstname, lastname, email,username,password,copyrightnumber,region,musictype,DOB,website,about,contactinfo,aob) VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%s') ", 
+            mysqli_real_escape_string($dbcon, $firstname),
+            mysqli_real_escape_string($dbcon, $lastname),
+            mysqli_real_escape_string($dbcon, $email), 
+            mysqli_real_escape_string($dbcon, $User),
+            mysqli_real_escape_string($dbcon, $pass),
+            mysqli_real_escape_string($dbcon, $copyrightnum),
+            mysqli_real_escape_string($dbcon, $region),
+            mysqli_real_escape_string($dbcon, $musictype),
+            mysqli_real_escape_string($dbcon, $dob),
+            mysqli_real_escape_string($dbcon, $website),
+            mysqli_real_escape_string($dbcon, $about),
+            mysqli_real_escape_string($dbcon, $contactinfo),
+            mysqli_real_escape_string($dbcon, $extraInfo)
+            );
+
+              }   
          }
     }    
 
