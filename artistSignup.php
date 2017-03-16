@@ -44,7 +44,7 @@
       <!-- Body Section begins here -->
 <body>
 
-<<?php 
+<?php 
 // varibles to hold data entered by the artist into the database
   $firstname='';
   $lastname='';
@@ -59,7 +59,6 @@
   $about='';
   $contactinfo='';
   $extraInfo='';
-
       // storing data into the variables 
       if (isset($_POST['submit'])){
         // this variable is true if the user enters correct information. it is false if the information is not valid. 
@@ -171,6 +170,7 @@
              else{
               $extraInfo=$_POST['aob'];
              }
+             
           // when all the data has been put into the variables. 
           // start inserting 
       if ($ok) {
@@ -202,6 +202,11 @@
             mysqli_real_escape_string($dbcon, $extraInfo)
             );
 
+          // execute query
+            $exec = mysqli_query($dbcon, $sql);
+           if (!$exec) {
+               echo mysqli_error();
+           }
               }   
          }
     }    
