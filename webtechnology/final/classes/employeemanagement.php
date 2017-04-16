@@ -6,7 +6,7 @@
 /**
 * @author Veronicah Nanjala
 */
-class ClassName extends AnotherClass
+class EmplyoyeeManagement
 {
 	private $firstname;
 	private $lastname;
