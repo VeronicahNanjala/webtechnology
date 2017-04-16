@@ -130,7 +130,7 @@ return $this->contactnumber;
 *Adding employee to the database
 */
 public function addEmployee(){
-require_once("../database/dbclass.php");
+
 	$sql="INSERT INTO Employee empID=?,firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=?";
 
 	$stmt = $dbconn->prepare($sql);
@@ -167,7 +167,7 @@ require_once("../database/dbclass.php");
 *Updating an emplyee in the database
 */
 public function updateEmployee(){
-require_once("../database/dbclass.php");
+// require_once("../database/dbclass.php");
 
 	$id=$this->employeeid;
 	$sql="UPDATE Employee SET firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=? WHERE empID='$id'";
