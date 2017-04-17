@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*@author Tito Lulu Magero
 /* styling the backgound colour of web application*/
 html body {
@@ -32,4 +33,40 @@ html body {
 }
 .jumbotron {
 	color:transparent;
+=======
+/*@author Tito Lulu Magero
+/* styling the backgound colour of web application*/
+html body {
+	margin:0px;
+	padding:0px;
+	border:0px;
+	background-color: #183f4e;
+	
+}
+/*Styling appreance of text accompanying event poster*/
+.caption h3{
+	color:white;
+	text-align: justify;
+	font-family:rockwell;
+}
+
+.caption p{
+	color:white;
+	text-align: justify;
+	font-family:rockwell;
+}
+/*ridding button of the rounded corners */
+.btn {
+	border-radius:0px;
+	margin-top:10px;
+	font-size:16;
+}
+/*styling panel class encapsulating the text accompanying event posters*/
+.panel {
+	background-color:transparent;
+	border:0px;
+}
+.jumbotron {
+	color:transparent;
+>>>>>>> 0852760d4beb3080a9f3e5457c744d64b9939870
 }
