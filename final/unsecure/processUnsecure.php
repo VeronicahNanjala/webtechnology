@@ -6,17 +6,17 @@
 require_once('../database/dbclass.php');
 
 if(isset($_POST['login'])){
-	verifylogin();
+	validatelogin();
 }
 if(isset($_POST['registerartist'])){
-	regartist();
+	validateartist();
 }
 if(isset($_POST['registerlistener'])){
-	reglistner();
+	validatelistner();
 }
 
 //check user details in database
-function verifylogin(){
+function verifylogin($name,$pwd){
 	$sql="SELECT username, password FROM artists, listeners WHERE 
 	listeners.username='$name' or artists.username='$name' AND 
 	listeners.password= '$pwd'or artists.password='$pwd'";
@@ -39,7 +39,7 @@ function verifylogin(){
 		die();
 	}
 }
-function regartist(){
+function regartist($fn,$ln,$uname,$email,$pwd,$mtype){
 	//hash password
 	$pwdhash=password_hash($pwd,PASSWORD_DEFAULT);
 	//query
@@ -59,7 +59,7 @@ function regartist(){
 	
 	
 }
-function reglistener(){
+function reglistener($fn,$ln,$uname,$email,$pwd){
 	//hash password
 	$pwdhash=password_hash($pwd,PASSWORD_DEFAULT);
 	//query
@@ -87,7 +87,7 @@ function validatelistener(){
 	$uname= $_REQUEST['fusername'];
 	$email= $_REQUEST['femail'];
 	$pwd= $_REQUEST['fpassword'];
-	reglistener();
+	reglistener($fn,$ln,$uname,$email,$pwd);
 }
 /*function to validate artist registration details
 *requests form inputs and validates them using regex and php
@@ -100,19 +100,19 @@ function validateartist(){
 	$email= $_REQUEST['email'];
 	$pwd= $_REQUEST['password'];
 	$mtype= $_REQUEST['musictype'];
-	regartists();
+	regartists($fn,$ln,$uname,$email,$pwd,$mtype);
 	
 }
 /*validate login details
 *requets login input and validate using regex and php
 *calls verifylogin()
 */
-function validlogin(){
+function validatelogin(){
 	//request and validate login details
-	$nm = $_REQUEST['uname'];
-	$paswd= $_REQUEST['pwd'];
+	$name = $_REQUEST['uname'];
+	$pwd= $_REQUEST['pwd'];
 	//call verify login function
-	verifylogin();
+	verifylogin($name,$pwd);
 }
 
 
