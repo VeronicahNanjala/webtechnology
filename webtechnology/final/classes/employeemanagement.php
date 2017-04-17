@@ -8,9 +8,6 @@
 */
 
 class EmplyoyeeManagement
-=======
-class ClassName extends AnotherClass
->>>>>>> 0852760d4beb3080a9f3e5457c744d64b9939870
 {
 	private $firstname;
 	private $lastname;
@@ -142,7 +139,7 @@ public function addEmployee(){
 // require once db connection
 	require_once("../database/dbclass.php");
 	$conn=new databaseConnection;
-	$dbconn=$conn->$connect;
+	$dbconn=$conn->connect2db();
 
 	$sql="INSERT INTO Employee empID=?,firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=?";
 
@@ -170,7 +167,7 @@ public function deleteEmployee(){
 // require once db connection
 	require_once("../database/dbclass.php");
 	$conn=new databaseConnection;
-	$dbconn=$conn->$connect;
+	$dbconn=$conn->connect2db();
 
 	$id=$this->employeeid;
 	$sql="DELETE FROM Employee WHERE WHERE empID='$id'";
@@ -189,7 +186,7 @@ public function updateEmployee(){
 // require once db connection
 	require_once("../database/dbclass.php");
 	$conn=new databaseConnection;
-	$dbconn=$conn->$connect;
+	$dbconn=$conn->connect2db();
 
 	$id=$this->employeeid;
 	$sql="UPDATE Employee SET firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=? WHERE empID='$id'";
