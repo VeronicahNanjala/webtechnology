@@ -63,8 +63,8 @@ function reglistener(){
 	//hash password
 	$pwdhash=password_hash($pwd,PASSWORD_DEFAULT);
 	//query
-	$sql="INSERT INTO listeners(username,email,password) 
-	VALUES ('$uname','$email','$pwdhash')";
+	$sql="INSERT INTO listeners(first_name,last_name,username,email,password) 
+	VALUES ('$fn','$ln''$uname','$email','$pwdhash')";
 	$register=new databaseConnection;
 	//execute query
 	$executeqry=$resgister->querydb($sql);
@@ -82,9 +82,11 @@ function reglistener(){
 *calls reglistener()
 */
 function validatelistener(){
-	$uname= $_REQUEST[];
-	$email= $_REQUEST[];
-	$pwd= $_REQUEST[];
+	$fn= $_REQUEST['fname'];
+	$ln= $_REQUEST['lname'];
+	$uname= $_REQUEST['fusername'];
+	$email= $_REQUEST['femail'];
+	$pwd= $_REQUEST['fpassword'];
 	reglistener();
 }
 /*function to validate artist registration details
@@ -92,14 +94,25 @@ function validatelistener(){
 *calls regartist()
 */
 function validateartist(){
-	$fn= $_REQUEST[];
-	$ln= $_REQUEST[];
-	$uname= $_REQUEST[];
-	$email= $_REQUEST[];
-	$pwd= $_REQUEST[];
-	$mtype= $_REQUEST[];
+	$fn= $_REQUEST['fname'];
+	$ln= $_REQUEST['lname'];
+	$uname= $_REQUEST['username'];
+	$email= $_REQUEST['email'];
+	$pwd= $_REQUEST['password'];
+	$mtype= $_REQUEST['musictype'];
 	regartists();
 	
+}
+/*validate login details
+*requets login input and validate using regex and php
+*calls verifylogin()
+*/
+function validlogin(){
+	//request and validate login details
+	$nm = $_REQUEST['uname'];
+	$paswd= $_REQUEST['pwd'];
+	//call verify login function
+	verifylogin();
 }
 
 
