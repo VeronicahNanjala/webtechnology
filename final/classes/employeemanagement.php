@@ -150,53 +150,51 @@ if($conn){
 /*
 *Deleting empployee from the database
 */
-public function deleteEmployee(){
+public function deleteEmployee($id){
 // require once db connection
-	$id=$this->employeeid;
-	$sql="DELETE FROM Employee WHERE WHERE empID='$id'";
+	$sql="DELETE FROM Employee WHERE empID='$id'";
+	$dbconn= new databaseConnection;
+	$conn=$dbconn->querydb($sql);
+	if($conn){
+	echo "Deleted";
+}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 
-	$stmt = $dbconn->prepare($sql);
-
-	$stmt->bind_param('i', $id);
-	$stmt->execute(); 
-    $stmt->close();
 }
 
 /*
 *Updating an emplyee in the database
 */
-public function updateEmployee(){
+public function updateEmployee($id){
 // require once db connection
-
-	$id=$this->employeeid;
-	$sql="UPDATE Employee SET first_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=? WHERE empID='$id'";
-
-	$stmt = $dbconn->prepare($sql);
-
 	$fname=$this->firstname;
-	$laname=$this->lastname;
+	$lname=$this->lastname;
 	$edate=$this->employmentdate;
 	$gen=$this->gender;
 	$contact=$this->contactnumber;
 	$rl=$this->role;
+	$sql="UPDATE Employee SET first_name='$fname',last_name='$lname',employmentDate='$edate',gender='$gen',contact_no='$contact',role='$rl'WHERE empID='$id'";
+	$dbconn= new databaseConnection;
+	$conn=$dbconn->querydb($sql);
+	if($conn){
+	echo "Updated";
+}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 
-	$stmt->bind_param('i','s','s','s','s','i','s', $id,$fname,$lname,$edate,$gender,$contact,$rl);
-	$stmt->execute(); 
-    $stmt->close();
 }
 }
 
 $testEmployee = new EmplyeeManagement;
 echo $testEmployee->setId(34);
-echo $testEmployee->setFname("Vero");
-echo $testEmployee->setLname("Nduta");
-echo $testEmployee->setGender("F");
+echo $testEmployee->setFname("Veronicah");
+echo $testEmployee->setLname("Ndutamwangi");
+echo $testEmployee->setGender("M");
 echo $testEmployee->setEmploymentDate("12/12/1994");
-echo $testEmployee->setRole("Editor");
-echo $testEmployee->setContactNumber(0213225);
+echo $testEmployee->setRole("Major");
+echo $testEmployee->setContactNumber(56);
 
 //$testEmployee->addEmployee();
 
-var_dump($testEmployee->addEmployee());
+//var_dump($testEmployee->addEmployee());
+//var_dump($testEmployee->deleteEmployee(1));
+//var_dump($testEmployee->updateEmployee(47));
 
 ?>
