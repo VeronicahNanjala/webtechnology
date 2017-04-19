@@ -25,6 +25,11 @@ class EmplyeeManagement extends databaseConnection
 /*
 *Set the id of the employee 
 */
+
+    /**
+     * @param $id
+     */
+
 public function setId($id){
 $this->employeeid=$id;
 }
@@ -34,7 +39,7 @@ $this->employeeid=$id;
 * @return return employeeId
 */
 public function getId(){
-return $this->employeeId;
+return $this->employeeid;
 }
 
 /*
@@ -121,8 +126,6 @@ public function getContactNumber(){
 return $this->contactnumber;
 }
 
-
-
 /*
 *The following methods interact with the datacbase using information from the above set and get methods 
 */
@@ -145,6 +148,7 @@ $conn=$dbconn->querydb($sql);
 if($conn){
 	echo "okay";
 }else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+
 }
 
 /*
@@ -158,14 +162,13 @@ public function deleteEmployee($id){
 	if($conn){
 	echo "Deleted";
 }else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
-
 }
 
 /*
 *Updating an emplyee in the database
 */
 public function updateEmployee($id){
-// require once db connection
+	$fname=$this->firstname;
 	$fname=$this->firstname;
 	$lname=$this->lastname;
 	$edate=$this->employmentdate;
@@ -189,12 +192,12 @@ echo $testEmployee->setLname("Ndutamwangi");
 echo $testEmployee->setGender("M");
 echo $testEmployee->setEmploymentDate("12/12/1994");
 echo $testEmployee->setRole("Major");
-echo $testEmployee->setContactNumber(56);
+echo $testEmployee->setContactNumber(56787);
 
 //$testEmployee->addEmployee();
 
-//var_dump($testEmployee->addEmployee());
-//var_dump($testEmployee->deleteEmployee(1));
-//var_dump($testEmployee->updateEmployee(47));
+//var_dump($testEmployee->addEmployee(1));
+//var_dump($testEmployee->deleteEmployee(47));
+var_dump($testEmployee->updateEmployee(34));
 
 ?>
