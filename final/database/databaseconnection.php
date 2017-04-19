@@ -1,9 +1,11 @@
 <?php 
 /*
 *@author Tito Lulu Magero.
+* Edited by Veronicah 
 */
- $hostname= 'localhost';
- $dname='n2018';
- $uname='root';
- $pwd='';
+// valid database names
+define('DBHOST', 'localhost');
+define('DBUSERNAME', 'root');
+define('DBPASSWORD', '');
+define('DBNAME', 'n2018');
 ?>

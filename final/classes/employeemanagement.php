@@ -6,7 +6,8 @@
 /**
 * @author Veronicah Nanjala
 */
-class ClassName extends AnotherClass
+require_once("../database/dbclass.php");
+class EmplyeeManagement extends databaseConnection
 {
 	private $firstname;
 	private $lastname;
@@ -96,7 +97,7 @@ return $this->employmentdate;
 *
 */
 public function setRole($rl){
-$this->role=$rl
+$this->role=$rl;
 }
 
 /*
@@ -110,7 +111,7 @@ return $this->role;
 *
 */
 public function setContactNumber($contact){
-$this->contactnumber=$contact
+$this->contactnumber=$contact;
 }
 
 /*
@@ -130,22 +131,20 @@ return $this->contactnumber;
 *Adding employee to the database
 */
 public function addEmployee(){
-// require once db connection
-	$sql="INSERT INTO Employee empID=?,firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=?";
-
-	$stmt = $dbconn->prepare($sql);
-
 	$id=$this->employeeid;
 	$fname=$this->firstname;
-	$laname=$this->lastname;
+	$lname=$this->lastname;
 	$edate=$this->employmentdate;
 	$gen=$this->gender;
 	$contact=$this->contactnumber;
 	$rl=$this->role;
-
-	$stmt->bind_param('i','s','s','s','s','i','s', $id,$fname,$lname,$edate,$gender,$contact,$rl);
-	$stmt->execute(); 
-    $stmt->close(); 
+$sql="INSERT INTO Employee (empID,first_name,last_name,employmentDate,gender,contact_no,role) VALUES('$id',
+	  '$fname','$lname','$edate','$gen','$contact','$rl')";
+$dbconn= new databaseConnection;
+$conn=$dbconn->querydb($sql);
+if($conn){
+	echo "okay";
+}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 }
 
 /*
@@ -170,7 +169,7 @@ public function updateEmployee(){
 // require once db connection
 
 	$id=$this->employeeid;
-	$sql="UPDATE Employee SET firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=? WHERE empID='$id'";
+	$sql="UPDATE Employee SET first_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=? WHERE empID='$id'";
 
 	$stmt = $dbconn->prepare($sql);
 
@@ -186,4 +185,18 @@ public function updateEmployee(){
     $stmt->close();
 }
 }
+
+$testEmployee = new EmplyeeManagement;
+echo $testEmployee->setId(34);
+echo $testEmployee->setFname("Vero");
+echo $testEmployee->setLname("Nduta");
+echo $testEmployee->setGender("F");
+echo $testEmployee->setEmploymentDate("12/12/1994");
+echo $testEmployee->setRole("Editor");
+echo $testEmployee->setContactNumber(0213225);
+
+//$testEmployee->addEmployee();
+
+var_dump($testEmployee->addEmployee());
+
 ?>

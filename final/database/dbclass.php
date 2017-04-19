@@ -14,11 +14,10 @@ class databaseConnection{
 	*@return return true or false
 	*/
 	public function connect2db(){
-		$this->connect=new mysqli($hostname, $dname,$uname,$pwd);
+		$this->connect=mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DBNAME);
 		
 		if(mysqli_connect_errno()){
 			return false;
-			
 		}
 		else{
 			return true;
@@ -29,14 +28,15 @@ class databaseConnection{
 	*@return return true or false
 	*/
 	public function querydb($sql){
-		if(!$this->connect()){
+		if(!$this->connect2db()){
 			return false;
 		}
 		else{
-			$this->result=mysqli_query($this->connect,$sql);
+			$this->result=mysqli_query($this->connect, $sql);
 		}
 		//check records returned
 		if($this->result ==false){
+			echo "err";
 			return false;
 			
 		}else{
