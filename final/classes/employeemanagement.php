@@ -226,8 +226,8 @@ function loadinfo(){
 						<td>{$row['contact_no']}  </td>
 						<td>{$row['role']}  </td>
 
-						<td><a href='updateemployee.php?update={$row['empID']}'>Update</a></td>
-						<td><a href='deleteEmployee.php?delete={$row['empID']}'>Delete</a></td>
+						<td><a href='../pages/updateemployee.php?update={$row['empID']}'>Update</a></td>
+						<td><a href='employeePage.php?delete={$row['empID']}'>Delete</a></td>
 				</tr>
 
 			";

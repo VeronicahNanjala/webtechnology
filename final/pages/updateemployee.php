@@ -57,7 +57,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="../index.php"> Ngoma </a>
+      <a class="navbar-brand" href="##"> Ngoma </a>
 
     </div>
 
@@ -66,7 +66,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="current"><a href="#intro"> Home </a></li>
+      <a class="navbar-brand" href="../pages/addemployee.php"> Add employee </a>
+        <li class="current"><a href="../layout/employeePage.php"> Home </a></li>
     <li><a href="listenerSignUp.php">  </a></li>
     <li><a href="artistSignUp.html"> </a></li>
     <li><a href="Login.html"> </a></li>
