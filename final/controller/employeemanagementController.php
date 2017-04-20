@@ -15,10 +15,16 @@ elseif (isset($_POST['delete'])) {
 	deleteEmployee();
 }
 
+elseif (isset($_POST['idUpdate'])) {
+	echo "Existing data";
+	loadEmployeeeInfo();
+}
+
 elseif (isset($_POST['update'])) {
 	echo "updating an employee";
 	updateEmployee();
 }
+
 
 
 /*
@@ -170,6 +176,7 @@ function updateEmployee(){
 
 function loadEmployeeeInfo(){
 	$employeeId=$_REQUEST['id'];
+
 	$testEmployee = new EmplyeeManagement;
 	$testEmployee->loadinfo($employeeId);
 }

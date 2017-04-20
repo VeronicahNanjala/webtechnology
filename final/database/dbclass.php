@@ -36,7 +36,6 @@ class databaseConnection{
 		}
 		//check records returned
 		if($this->result ==false){
-			echo "err";
 			return false;
 			
 		}else{
@@ -51,7 +50,7 @@ class databaseConnection{
 			return false;
 		}
 		else{
-			mysqli_fetch_assoc($this->result);
+			return mysqli_fetch_assoc($this->result);
 		}
 		
 	}

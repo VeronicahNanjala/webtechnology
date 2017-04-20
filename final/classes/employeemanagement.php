@@ -127,28 +127,6 @@ return $this->contactnumber;
 }
 
 /*
-*Load information about emmployee from database
-*/
-
-function loadinfo($id){
-	
-	$sql="SELECT * FROM Employee WHERE empID='$id'";
-	$dbconnEmployee= new databaseConnection;
-	$conn=$dbconnEmployee->querydb($sql);
-		if($conn){
-				while ($row=$dbconnEmployee->fetchdb()){
-				echo $row['empID'];
-				echo $row['first_name'];
-				echo $row['last_name'];
-				echo $row['employmentDate'];
-				echo $row['gender'];
-				echo $row['contact_no'];
-				echo $row['role'];
-			  }
-		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
-	}
-
-/*
 *The following methods interact with the datacbase using information from the above set and get methods 
 */
 
@@ -177,7 +155,7 @@ if($conn){
 *Deleting empployee from the database
 */
 public function deleteEmployee($id){
-// require once db connection
+
 	$sql="DELETE FROM Employee WHERE empID='$id'";
 	$dbconn= new databaseConnection;
 	$conn=$dbconn->querydb($sql);
@@ -202,13 +180,33 @@ public function updateEmployee($id){
 	$conn=$dbconn->querydb($sql);
 	if($conn){
 	echo "Updated";
-}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
-
+	}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 }
+/*
+*Load information about emmployee from database
+*/
+
+function loadinfo($id){
+	
+	$sql="SELECT * FROM Employee WHERE empID='$id'";
+	$dbconnEmployee= new databaseConnection;
+	$conn=$dbconnEmployee->querydb($sql);
+		if($conn){
+				while ($row=$dbconnEmployee->fetchdb()){
+				echo "ID:   " .$row['empID'] ."<br>";
+				echo "First name:    " .$row['first_name']."<br>";
+				echo "Last name:   " .$row['last_name']."<br>";
+				echo "Employement date:   " .$row['employmentDate']."<br>";
+				echo "Genger:   " .$row['gender']."<br>";
+				echo "Contact number:   " .$row['contact_no']."<br>";
+				echo "Role:   " .$row['role']."<br>";
+			  }
+		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+	}
 }
 
 $testEmployee = new EmplyeeManagement;
-// echo $testEmployee->setId(34);
+//echo $testEmployee->setId(34);
 // echo $testEmployee->setFname("Veronicah");
 // echo $testEmployee->setLname("Ndutamwangi");
 // echo $testEmployee->setGender("M");
@@ -220,6 +218,5 @@ $testEmployee = new EmplyeeManagement;
 
 //var_dump($testEmployee->addEmployee(1));
 //var_dump($testEmployee->deleteEmployee(47));
-var_dump($testEmployee->loadinfo(34));
-
+//var_dump($testEmployee->loadinfo(21));
 ?>
