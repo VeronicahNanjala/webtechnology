@@ -127,6 +127,27 @@ return $this->contactnumber;
 }
 
 /*
+*Load information about emmployee from database
+*/
+
+function loadinfo($id){
+	$dbconnEmployee= new databaseConnection;
+	$sql="SELECT * FROM Employee WHERE empID='$id'";
+	$conn=$dbconnEmployee->querydb($sql);
+		if($conn){
+				while ($row=$dbconnEmployee->fetchdb()){
+				echo $row['empID'];
+				echo $row['first_name'];
+				echo $row['last_name'];
+				echo $row['employmentDate'];
+				echo $row['gender'];
+				echo $row['contact_no'];
+				echo $row['role'];
+			  }
+		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+	}
+
+/*
 *The following methods interact with the datacbase using information from the above set and get methods 
 */
 
@@ -146,7 +167,7 @@ $sql="INSERT INTO Employee (empID,first_name,last_name,employmentDate,gender,con
 $dbconn= new databaseConnection;
 $conn=$dbconn->querydb($sql);
 if($conn){
-	echo "okay";
+	echo "Employee added <br>";
 }else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 
 }
@@ -186,18 +207,18 @@ public function updateEmployee($id){
 }
 
 $testEmployee = new EmplyeeManagement;
-echo $testEmployee->setId(34);
-echo $testEmployee->setFname("Veronicah");
-echo $testEmployee->setLname("Ndutamwangi");
-echo $testEmployee->setGender("M");
-echo $testEmployee->setEmploymentDate("12/12/1994");
-echo $testEmployee->setRole("Major");
-echo $testEmployee->setContactNumber(56787);
+// echo $testEmployee->setId(34);
+// echo $testEmployee->setFname("Veronicah");
+// echo $testEmployee->setLname("Ndutamwangi");
+// echo $testEmployee->setGender("M");
+// echo $testEmployee->setEmploymentDate("12/12/1994");
+// echo $testEmployee->setRole("Major");
+// echo $testEmployee->setContactNumber(56787);
 
 //$testEmployee->addEmployee();
 
 //var_dump($testEmployee->addEmployee(1));
 //var_dump($testEmployee->deleteEmployee(47));
-var_dump($testEmployee->updateEmployee(34));
+var_dump($testEmployee->loadinfo(34));
 
 ?>

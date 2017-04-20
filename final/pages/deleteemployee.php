@@ -16,7 +16,7 @@
     <meta name="description" content="African Music Reserve" />
     <meta name="author" content="Ngoma Project" />
 
-    <title>Employee register</title>
+    <title>Employee Del+ete</title>
 
 <!-- Bootstrap -->
 
@@ -85,9 +85,9 @@
 <?php require_once('../controller/employeemanagementController.php');?>
 
 
-<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit ="validateEntries()">
+<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white; margin-top: 10%;margin-bottom:10% " name="artForm" action="" method="post" onSubmit ="validateEntries()">
   <div style="text-align:center">
-    <h3 style="color:white"> Register an emplyoee</h3>
+    <h3 style="color:white"> DELETE AN EMPLOYEE</h3>
   </div>
 
       <!--Form container begins here -->
@@ -100,51 +100,10 @@
       </div>
   </div> 
 
-  <div class="form-group">
-    <label class="control-label col-sm-3" for="fname">First name:</label>
-      <div class="col-lg-8">
-        <input type="text" class="form-control" name= "fname" placeholder="First Name" required autofocus pattern="[a-zA-Z]+" title="Only letters">
-      </div>
-  </div>   
-
-  <div class="form-group">
-   <label class="control-label col-sm-3" for="lname">Last name:</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="lname" required placeholder="Last name"> 
-      </div>
-  </div>
-     
- <div class="form-group">
-   <label class="control-label col-sm-3" for="edate">Employment date:</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="edate" required placeholder="dd/mm/yyyy" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" title="Enter the correct date pattern"> 
-      </div>
-  </div>      
-  <div class="form-group">
-   <label class="control-label col-sm-3" for="gender">Gender:</label>
-      <div class="col-sm-8">
-        <input type="radio" name="gender" id="gender" value="M" CHECKED> Male
-        <input type="radio" name="gender" id="gender" value="F"> Female
-      </div>
-  </div>
-
-  <div class="form-group">
-   <label class="control-label col-sm-3" for="cnumber">Contact number:</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="cnumber" required placeholder="contact number" pattern="[0-9\s]+" title="Only letters and numerics">
-      </div>
-  </div> 
-    
-  
- <div class="form-group">
-   <label class="control-label col-sm-3" for="rl">Role:</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="rl" required placeholder="Role" pattern="[a-zA-Z\s]+" title="Only letters and spaces"> 
-      </div>
-  </div> 
   <!-- Submission section for form -->
-   <div style="float: right; color: black;"><input type="submit" name="add"><br></div>
+   <div style="float: right; color: black;"><input type="submit" name="delete"><br><br></div>
 </form>
+<br><br>
 </div>
 
 <!-- end section contact -->

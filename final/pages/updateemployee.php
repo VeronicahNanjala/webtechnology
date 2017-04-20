@@ -16,7 +16,7 @@
     <meta name="description" content="African Music Reserve" />
     <meta name="author" content="Ngoma Project" />
 
-    <title>Employee register</title>
+    <title>Update register</title>
 
 <!-- Bootstrap -->
 
@@ -87,19 +87,14 @@
 
 <form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit ="validateEntries()">
   <div style="text-align:center">
-    <h3 style="color:white"> Register an emplyoee</h3>
+    <h3 style="color:white"> Udate an emplyoee</h3>
   </div>
+ <!--  information from the database to be updated-->
+
+ <?php ?>
+
 
       <!--Form container begins here -->
-
-  <div>
-  <div class="form-group">
-    <label class="control-label col-sm-3" for="id">Id:</label>
-      <div class="col-lg-8">
-        <input type="text" class="form-control" name= "id" placeholder="Employee id" required autofocus pattern="[0-9]+" title="Only numbers">
-      </div>
-  </div> 
-
   <div class="form-group">
     <label class="control-label col-sm-3" for="fname">First name:</label>
       <div class="col-lg-8">
@@ -143,7 +138,7 @@
       </div>
   </div> 
   <!-- Submission section for form -->
-   <div style="float: right; color: black;"><input type="submit" name="add"><br></div>
+   <div style="float: right; color: black;"><input type="submit" name="update"><br></div>
 </form>
 </div>
 
