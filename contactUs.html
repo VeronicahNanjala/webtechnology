@@ -1,18 +1,24 @@
-<!-- Ngoma - Team Project
-	 Group members: Benedicta Amo Bempah, Tito Magero, Veronicah Nanjala, Loltolo Petro Lesapiti
-	 Web Technologies 
-	 Task 2.1 - Web Tech: Client Side / Front End Programming
--->
-
-<!doctype html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="utf-8">
-<title> Ngoma </title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="African Music Reserve" />
-<meta name="author" content="Ngoma Project" />
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+.td {
+    color:white;
+}
+</style>
+</head>
 
 <!-- styles -->
 <link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
@@ -21,9 +27,6 @@
 <link rel="stylesheet" href="assets/css/slippry.css">
 <link href="assets/css/style.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/color/default.css">
-<link rel="stylesheet" href="assets/css/styleSignup.css">
-<link rel="stylesheet" href="assets/css/landing.css">
-
 <!-- ==========================================================================
     Details of theme employed for the front end of the project is as follows: 
     Theme Name: Groovin
@@ -59,10 +62,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="current"><a href="#intro"> Home </a></li>
-		<li><a href="listenerSignUp.php"> Sign Up as a Listener </a></li>
-		<li><a href="artistSignUp.html"> Sign Up as a an Artist</a></li>
-		<li><a href="Login.html"> Sign In</a></li>
+        <li><a href="index.html"> Home </a></li>
+		<li><a href="home.html"> About </a></li>
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
 	</div>
@@ -72,35 +73,85 @@
 
 </header>
 
-			<!-- Header section ends. Slide View layout -->
-<section id="intro">
-			<ul id="slippry-slider">
-			  <li>
-				<a href="#slide1"><img src="assets/img/slide/img6.jpg" alt="Welcome to Ngoma Music!"></a>
-			  </li>
-			  <li>
-				<a href="#slide2"><img src="assets/img/slide/img2.jpg" alt="Africa's only authentic music hub"></a>
-			  </li>
-			  <li>
-				<a href="#slide3"><img src="assets/img/slide/img1.jpg" alt="We've got you covered from all corners of Africa, you will <span class='red'>♥</span> this experience :)"></a>
-			  </li>
-			</ul>
-</section>
-<!-- end intro -->
+<body>
+<!--A form for the contact us page-->
+<div style = "margin-top:100px; "> 
+<form name="myForm" style = "background-color: #4e3f3e;  width :50%; margin: auto" action="record.html" onsubmit="return validateForm()" method="post">
+	<table style = "padding-top: 15%; margin:auto; ">
+	<h1 align="center" style= "color: white;"> Contact Us </h1>
+	<tr>
+	<td class = "td"> Name</td>
+	<td> <input type="text" name="fname" size="42%"> <br><br></td>
+	</tr>
+
+	<tr>
+	<td class = "td"> Email</td>
+	<td><input type="text" name ="femail" size="42%"><br><br></td>
+	</tr>
+		<tr>
+	<td class = "td">Message</td>
+	<td><textarea type="text" name="fmessage" rows="6" cols="40"></textarea><br><br></td>
+	</tr>
+
+	<tr>
+	<td></td>
+	<td ><input type="submit" class = "button" value="Submit" ></td>
+	</tr>
+
+	</table>
+</form>
+</div>
+
+<script>
+//A function that validates the contents of the form
+function validateForm() {
+	//check if name is not empty
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        document.forms[myform].elements[fname].focus();
+        return false;
+    }
+    //check if email is not empty
+     var y = document.forms["myForm"]["femail"].value;
+    if (y == "") {
+        alert("Email must be filled out");
+        document.forms[myform].elements[femail].focus();
+        return false;
+        }
+
+    // check for proper email format
+    
+    	validate_email(myform, femail);
+    //check if message box is not empty
+         var z = document.forms["myForm"]["fmessage"].value;
+    if (z == "") {
+        alert("Tell us your message");
+        document.forms[myform].elements[fmessage].focus();
+        return false;
+    }
 
 
+}
 
-        
-<!-- end section contact -->
-<footer>
+function validate_email(myform, femail){
+	var reg = /^([A-Za-z0-9_\-\.]){1,}$\@([A-Za-z0-9_\-\.]){1,}\.([A-Za-a]{2,4})$/;
+	var email = document.forms[myform].elements[femail].value;
+	if (reg.test(email)==false){
+		alert("Invalid email address. Please enter a valid one.")
+		document.forms[myform].elements[femail].focus();
+		return false;
+	}
+}
+</script>
+
+
+<footer style = "margin-top: 10px">
 <div class="verybottom">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="aligncenter">
-				<h1 style="color:white">
-					Sign Up to experience more! <br>
-				</h1>
                 <ul class="social-network social-circle">
                     <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
                     <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -132,51 +183,7 @@
 	</div>
 </div>
 </footer>
-<a href="#" class="scrollup"><i class="fa fa-angle-up fa-2x"></i></a>
-<!-- javascript -->
-<script src="assets/js/jquery-1.9.1.min.js"></script>
-<script src="assets/js/jquery.easing.js"></script>
-<script src="assets/js/classie.js"></script>
-<script src="assets/js/login.js"></script>
-<script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/slippry.min.js"></script>
-<script src="assets/js/nagging-menu.js"></script>
-<script src="assets/js/jquery.nav.js"></script>
-<script src="assets/js/jquery.scrollTo.js"></script>
-<script src="assets/js/jquery.fancybox.pack.js"></script> 
-<script src="assets/js/jquery.fancybox-media.js"></script> 
-<script src="assets/js/masonry.pkgd.min.js"></script>
-<script src="assets/js/imagesloaded.js"></script>
-<script src="assets/js/jquery.nicescroll.min.js"></script>
-<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="assets/js/AnimOnScroll.js"></script>
-    <script>
-        new AnimOnScroll( document.getElementById( 'grid' ), {
-            minDuration : 0.4,
-            maxDuration : 0.7,
-            viewportFactor : 0.2
-        } );
-    </script>
-<script>
-	$(document).ready(function(){
-	  $('#slippry-slider').slippry(
-		defaults = {
-			transition: 'vertical',
-			useCSS: true,
-			speed: 5000,
-			pause: 3000,
-			initSingle: false,
-			auto: true,
-			preload: 'visible',
-			pager: false,		
-		} 
-	  
-	  )
-	});
-</script>
-
-<script src="assets/js/custom.js"></script>
-<script src="contactform/contactform.js"></script>
 
 </body>
+
 </html>

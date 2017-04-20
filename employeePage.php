@@ -1,7 +1,7 @@
 <!-- Ngoma - Team Project
 	 Group members: Benedicta Amo Bempah, Tito Magero, Veronicah Nanjala, Loltolo Petro Lesapiti
 	 Web Technologies 
-	 Task 2.1 - Web Tech: Client Side / Front End Programming
+	 Task 3.1 - Web Tech: Employee Page
 -->
 
 <!doctype html>
@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="utf-8">
-<title> Ngoma </title>
+<title> Ngoma Employee </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="African Music Reserve" />
 <meta name="author" content="Ngoma Project" />
@@ -59,10 +59,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="current"><a href="#intro"> Home </a></li>
-		<li><a href="listenerSignUp.php"> Sign Up as a Listener </a></li>
-		<li><a href="artistSignUp.html"> Sign Up as a an Artist</a></li>
-		<li><a href="Login.html"> Sign In</a></li>
+        <li class="current"><a href="index.html"> Home </a></li>
+		<li><a href="listenerSignUp.php"> Delete Admin </a></li>
+		<li><a href="artistSignUp.html"> Add Admin </a></li>
+		<li><a href="Login.html"> Edit Admin </a></li>
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
 	</div>
@@ -73,7 +73,7 @@
 </header>
 
 			<!-- Header section ends. Slide View layout -->
-<section id="intro">
+<!-- <section id="intro">
 			<ul id="slippry-slider">
 			  <li>
 				<a href="#slide1"><img src="assets/img/slide/img6.jpg" alt="Welcome to Ngoma Music!"></a>
@@ -85,9 +85,15 @@
 				<a href="#slide3"><img src="assets/img/slide/img1.jpg" alt="We've got you covered from all corners of Africa, you will <span class='red'>♥</span> this experience :)"></a>
 			  </li>
 			</ul>
-</section>
+</section> -->
 <!-- end intro -->
+<body>
+	<?php
 
+		echo "Hello Team - insert songs here by connection to song class";
+	?>
+
+</body>
 
 
         
@@ -99,7 +105,7 @@
 			<div class="col-md-12">
 				<div class="aligncenter">
 				<h1 style="color:white">
-					Sign Up to experience more! <br>
+					Enjoy your Ngoma experience more! <br>
 				</h1>
                 <ul class="social-network social-circle">
                     <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>

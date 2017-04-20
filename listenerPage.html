@@ -1,7 +1,7 @@
 <!-- Ngoma - Team Project
 	 Group members: Benedicta Amo Bempah, Tito Magero, Veronicah Nanjala, Loltolo Petro Lesapiti
 	 Web Technologies 
-	 Task 2.1 - Web Tech: Client Side / Front End Programming
+	 Task 3.1 - Web Tech: Listener Page
 -->
 
 <!doctype html>
@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="utf-8">
-<title> Ngoma </title>
+<title> Ngoma Listener Page </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="African Music Reserve" />
 <meta name="author" content="Ngoma Project" />
@@ -59,10 +59,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="current"><a href="#intro"> Home </a></li>
-		<li><a href="listenerSignUp.php"> Sign Up as a Listener </a></li>
-		<li><a href="artistSignUp.html"> Sign Up as a an Artist</a></li>
-		<li><a href="Login.html"> Sign In</a></li>
+        <li class="current"><a href="index.html"> Home </a></li>
+		<li><a href="Events_landingpage.html"> Check Events </a></li>
+	<!-- 	<li><a href="artistSignUp.html"> Saved Listener Songs </a></li>
+		<li><a href="Login.html"> Sign In</a></li> -->
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
 	</div>
@@ -76,18 +76,44 @@
 <section id="intro">
 			<ul id="slippry-slider">
 			  <li>
-				<a href="#slide1"><img src="assets/img/slide/img6.jpg" alt="Welcome to Ngoma Music!"></a>
+				<a href="#slide1"><img src="assets/img/list/img6.jpeg" alt="Begin the African Play List!"></a>
 			  </li>
 			  <li>
-				<a href="#slide2"><img src="assets/img/slide/img2.jpg" alt="Africa's only authentic music hub"></a>
+				<a href="#slide2"><img src="assets/img/list/img2.jpeg" alt=" "></a>
 			  </li>
 			  <li>
-				<a href="#slide3"><img src="assets/img/slide/img1.jpg" alt="We've got you covered from all corners of Africa, you will <span class='red'>♥</span> this experience :)"></a>
+				<a href="#slide3"><img src="assets/img/list/img4.jpeg" alt=" "></a>
 			  </li>
 			</ul>
 </section>
 <!-- end intro -->
+<div>
+	<br><br><br>
 
+	<h5 style="text-align:center" > We've got all your African tunes covered </h5>
+
+        <div class="container">
+            <form method="post" action="">
+                <div class="input-group">
+                    <input type="text" name="searchtext" class="form-control">
+                    <span class="input-group-btn">
+                        <button name="search" class="btn btn-default" type="submit">Search!</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <div class="container" style="margin-left:1%">
+                <div class="col-md-6 offer" data-animate="fadeInDown">
+                    <a href=" " class="btn btn-success btn-sm" data-animate-hover="shake"> View Song Description </a> 
+                </div>
+                <br>
+                <br>
+</div>
+
+</body>
 
 
         
@@ -99,7 +125,7 @@
 			<div class="col-md-12">
 				<div class="aligncenter">
 				<h1 style="color:white">
-					Sign Up to experience more! <br>
+					Enjoy your Ngoma experience more! <br>
 				</h1>
                 <ul class="social-network social-circle">
                     <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
