@@ -1,5 +1,5 @@
 <!-- Ngoma - Team Project
-	 Group members: Benedicta Amo Bempah, Tito Magero, Veronicah Nanjala, Loltolo Petro Lesapiti
+	 @Authors Benedicta Amo Bempah, Tito Magero, Veronicah Nanjala, Loltolo Petro Lesapiti
 	 Web Technologies 
 	 Task 2.1 - Web Tech: Client Side / Front End Programming
 
@@ -89,17 +89,17 @@
 					<div class="row">
 						<div class="col-lg-4">
 							<a href="chalewote.jpg" class="fancybox">
-								<img src="../assets/img/events/chalewote.jpg" width="440 px" height="380px">
+								<img src="../image/chalewote.jpg" width="440 px" height="380px">
 							</a>
 						</div>
 						<div class="col-lg-4">
 							<a href="slam.jpg" data-lightbox="May" class="fancybox">
-								<img src="../assets/img/events/slam.jpg" width="440 px" height="380px" >
+								<img src="../image/slam.jpg" width="440 px" height="380px" >
 							</a>
 						</div>
 						<div class="col-lg-4">
 							<a href="lamu.jpg" data-lightbox="May" class="fancybox">
-								<img src="../assets/img/events/lamu.jpg" width="440 px" height="380px" >
+								<img src="../image/lamu.jpg" width="440 px" height="380px" >
 							</a>
 						</div>
 					</div>
@@ -112,18 +112,18 @@
 			<div> <!--second row-->
 				<div class="row">
 					<div class="col-lg-4">
-						<a href="img/vic.jpg" data-lightbox="May" class="fancybox">
-							<img src="assets/img/events/vic.jpg" width="440 px" height="380px">
+						<a href="vic.jpg" data-lightbox="May" class="fancybox">
+							<img src="../image/vic.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="img/muthoni.jpg" data-lightbox="May" class="fancybox">
-							<img src="assets/img/events/muthoni.jpg" width="440 px" height="380px" >
+						<a href="muthoni.jpg" data-lightbox="May" class="fancybox">
+							<img src="../image/muthoni.jpg" width="440 px" height="380px" >
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="assets/img/events/urban.jpg" data-lightbox="May" class="fancybox">
-							<img src="assets/img/events/urban.jpg" width="440 px" height="380px">
+						<a href="urban.jpg" data-lightbox="May" class="fancybox">
+							<img src="image/urban.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 				</div>
@@ -135,18 +135,18 @@
 			<div> <!--third row-->
 				<div class="row">
 					<div class="col-lg-4">
-						<a href="assets/img/events/mazwai.jpg" data-lightbox="May" class="fancybox">
-							<img src="assets/img/events/mazwai.jpg" width="440 px" height="380px"">
+						<a href="mazwai.jpg" data-lightbox="May" class="fancybox">
+							<img src="../image/mazwai.jpg" width="440 px" height="380px"">
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="assets/img/events/mask.jpg" data-lightbox="May" class="fancybox">
-							<img src="assets/img/events/mask.jpg" width="440 px" height="380px">
+						<a href="mask.jpg" data-lightbox="May" class="fancybox">
+							<img src="../image/mask.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4">
-						<a href="assets/img/events/jazz.jpg" data-lightbox="May" class="fancybox">
-							<img src="assets/img/events/jazz.jpg" width="440 px" height="380px">
+						<a href="jazz.jpg" data-lightbox="May" class="fancybox">
+							<img src="../image/jazz.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 				</div>
@@ -158,18 +158,18 @@
 			<div> <!--Fourth  row-->
 				<div class="row">
 					<div class="col-lg-4" data-lightbox="May">
-						<a href="assets/img/events/arab.jpg" class="fancybox" >
-							<img src="assets/img/events/arab.jpg" width="440 px" height="380px">
+						<a href="arab.jpg" class="fancybox" >
+							<img src="../image/arab.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4" data-lightbox="May">
-						<a href="assets/img/events/nai.jpg" class="fancybox">
-							<img src="assets/img/events/nai.jpg" width="440 px" height="380px">
+						<a href="nai.jpg" class="fancybox">
+							<img src="../image/nai.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 					<div class="col-lg-4" data-lightbox="May">
-						<a href="assets/img/events/zenzibar.jpg" class="fancybox" >
-							<img src="assets/img/events/zanzibar.jpg" width="440 px" height="380px">
+						<a href="zanzibar.jpg" class="fancybox" >
+							<img src="../image/zanzibar.jpg" width="440 px" height="380px">
 						</a>
 					</div>
 				</div>
