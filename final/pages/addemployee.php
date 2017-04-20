@@ -143,7 +143,7 @@
       </div>
   </div> 
   <!-- Submission section for form -->
-   <div style="float: right; color: black;"><input type="submit" name="add"><br></div>
+   <div style="float: right; color: black;"><input type="submit" name="add" value="Add"><br></div>
 </form>
 </div>
 

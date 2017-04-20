@@ -57,14 +57,22 @@ class databaseConnection{
 	/*prevent sql injection using prevent injection method
 	*@return return true or false
 	*/
-	public function preventsqlInj($sql){
-		
-	}
-	/*prepare statement function
-	*@return return true or false
-	*/
-	public function prepStatement(){
-		
-	}
+function sqlInjection($sql, ...$array){
+
+	  // check whether connection works
+	  if(!$this->connect2db())
+	  {
+	   return false;
+	  }
+	  
+	  $variables = array();
+	  foreach ($array as $value) 
+	  {
+	   $variables[]=mysqli_real_escape_string($this->connect, $value);
+	  }
+	  $sqlStatements=vsprintf($sql,$variables);
+	  $queryStatement=$this->querydb($sqlStatements);
+	  return $queryStatement;
+ }
 }
 ?>

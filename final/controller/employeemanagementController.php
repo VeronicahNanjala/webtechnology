@@ -8,16 +8,14 @@ require_once("../classes/employeemanagement.php");
 if (isset($_POST['add'])) {
 	// register the employee
 	addEmployee();
-
 }
 
-elseif (isset($_POST['delete'])) {
-	deleteEmployee();
-}
+elseif (isset($_GET['delete'])) {
+	$clear = (int)($_GET['delete']);
+	$del = new EmplyeeManagement;
+	$del -> deleteEmployee($clear);
 
-elseif (isset($_POST['idUpdate'])) {
-	echo "Existing data in the databse <br>";
-	loadEmployeeeInfo();
+	//deleteEmployee();
 }
 
 elseif (isset($_POST['update'])) {
@@ -160,18 +158,16 @@ $testEmployee->addEmployee();
 *function to delete information to the database
 */
 function deleteEmployee(){
-	$employeeId=$_REQUEST['id'];
-
 	$testEmployee = new EmplyeeManagement;
-	$testEmployee->deleteEmployee($employeeId);
+	$testEmployee->deleteEmployee();
 }
 
 /*
 *function to update information to the database
 */
 function updateEmployee(){
+	$employeeId = (int)($_GET['update']);
 
-	$employeeId=$_REQUEST['id'];
 	$employeeFname=$_REQUEST['fname'];
 	$employeeLname=$_REQUEST['lname'];
 	$employeeGender=$_REQUEST['gender'];
@@ -180,7 +176,6 @@ function updateEmployee(){
 	$employeeContact=$_REQUEST['cnumber'];
 
 $testEmployee = new EmplyeeManagement;
-$testEmployee->setId($employeeId);
 $testEmployee->setFname($employeeFname);
 $testEmployee->setLname($employeeLname);
 $testEmployee->setGender($employeeGender);
@@ -191,9 +186,7 @@ $testEmployee->updateEmployee($employeeId);
 }
 
 function loadEmployeeeInfo(){
-	$employeeId=$_REQUEST['id'];
-
 	$testEmployee = new EmplyeeManagement;
-	$testEmployee->loadinfo($employeeId);
+	$testEmployee->loadinfo();
 }
 ?>

@@ -82,26 +82,14 @@
             <!-- Form for data entry begins-->
 <div style = "margin-top:100px; ">
 
-<?php require_once('../controller/employeemanagementController.php');?>
-
-
 <form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white; margin-top: 10%;margin-bottom:10% " name="artForm" action="" method="post" onSubmit ="validateEntries()">
   <div style="text-align:center">
-    <h3 style="color:white"> DELETE AN EMPLOYEE</h3>
-  </div>
 
-      <!--Form container begins here -->
-
-  <div>
-  <div class="form-group">
-    <label class="control-label col-sm-3" for="id">Id:</label>
-      <div class="col-lg-8">
-        <input type="text" class="form-control" name= "id" placeholder="Employee id" required autofocus pattern="[0-9]+" title="Only numbers">
-      </div>
-  </div> 
-
-  <!-- Submission section for form -->
-   <div style="float: right; color: black;"><input type="submit" name="delete"><br><br></div>
+  <?php 
+  require_once('../controller/employeemanagementController.php');
+  $viewEmployees=new EmplyeeManagement;
+  $viewEmployees->loadinfo();
+  ?> 
 </form>
 <br><br>
 </div>

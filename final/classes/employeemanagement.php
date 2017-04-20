@@ -134,6 +134,8 @@ return $this->contactnumber;
 *Adding employee to the database
 */
 public function addEmployee(){
+	// $conn = new databaseConnection;
+$sql="INSERT INTO Employee (empID,first_name,last_name,employmentDate,gender,contact_no,role) VALUES('%d','%s','%s','%s','%s','%d','%s')";
 	$id=$this->employeeid;
 	$fname=$this->firstname;
 	$lname=$this->lastname;
@@ -141,11 +143,11 @@ public function addEmployee(){
 	$gen=$this->gender;
 	$contact=$this->contactnumber;
 	$rl=$this->role;
-$sql="INSERT INTO Employee (empID,first_name,last_name,employmentDate,gender,contact_no,role) VALUES('$id',
-	  '$fname','$lname','$edate','$gen','$contact','$rl')";
 $dbconn= new databaseConnection;
-$conn=$dbconn->querydb($sql);
-if($conn){
+$dbconn->sqlInjection($sql,$id,$fname,$lname,$edate,$gen,$contact,$rl);
+
+// $conn=$dbconn->querydb($sql);
+if($dbconn){
 	echo "Employee added <br>";
 }else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 
@@ -168,6 +170,7 @@ public function deleteEmployee($id){
 *Updating an emplyee in the database
 */
 public function updateEmployee($id){
+
 	$fname=$this->firstname;
 	$fname=$this->firstname;
 	$lname=$this->lastname;
@@ -175,10 +178,13 @@ public function updateEmployee($id){
 	$gen=$this->gender;
 	$contact=$this->contactnumber;
 	$rl=$this->role;
+
 	$sql="UPDATE Employee SET first_name='$fname',last_name='$lname',employmentDate='$edate',gender='$gen',contact_no='$contact',role='$rl'WHERE empID='$id'";
+
 	$dbconn= new databaseConnection;
-	$conn=$dbconn->querydb($sql);
-	if($conn){
+	$dbconn->sqlInjection($sql,$id,$fname,$lname,$edate,$gen,$contact,$rl);
+
+	if($dbconn){
 	echo "Updated";
 	}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 }
@@ -186,24 +192,121 @@ public function updateEmployee($id){
 *Load information about emmployee from database
 */
 
-function loadinfo($id){
-	
-	$sql="SELECT * FROM Employee WHERE empID='$id'";
+function loadinfo(){
+	$id="";
+	$sql="SELECT empID,first_name,last_name,employmentDate, gender,contact_no, role FROM Employee";
+	$dbconnEmployee= new databaseConnection;
+	$conn=$dbconnEmployee->querydb($sql);
+		if($conn){
+			echo "<table>
+					<tr>
+						<th>First name</th>
+						<th>Last name </th>
+						<th>Employment date</th>
+						<th>Gender</th>
+						<th>Contact No</th>
+						<th>Role</th>
+					</tr>
+				";
+				while ($row=$dbconnEmployee->fetchdb()){
+					$id=$row['empID'];
+				    $fname=$row['first_name'];
+					$lname=$row['last_name'];
+					$edate=$row['employmentDate'];
+					$gen=$row['gender'];
+					$cn=$row['contact_no'];
+					$rl=$row['role'];
+
+				echo 
+				"<tr>
+						<td>{$row['first_name']}  </td>
+						<td>{$row['last_name']}  </td>
+						<td>{$row['employmentDate']}  </td>
+						<td>{$row['gender']}  </td>
+						<td>{$row['contact_no']}  </td>
+						<td>{$row['role']}  </td>
+
+						<td><a href='updateemployee.php?update={$row['empID']}'>Update</a></td>
+						<td><a href='deleteEmployee.php?delete={$row['empID']}'>Delete</a></td>
+				</tr>
+
+			";
+			  }
+			  echo "</table>";
+		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+	}
+
+
+function retainValuesOnEdit(){
+	$id="";
+	$sql="SELECT empID,first_name,last_name,employmentDate, gender,contact_no, role FROM Employee";
 	$dbconnEmployee= new databaseConnection;
 	$conn=$dbconnEmployee->querydb($sql);
 		if($conn){
 				while ($row=$dbconnEmployee->fetchdb()){
-				echo "ID:   " .$row['empID'] ."<br>";
-				echo "First name:    " .$row['first_name']."<br>";
-				echo "Last name:   " .$row['last_name']."<br>";
-				echo "Employement date:   " .$row['employmentDate']."<br>";
-				echo "Genger:   " .$row['gender']."<br>";
-				echo "Contact number:   " .$row['contact_no']."<br>";
-				echo "Role:   " .$row['role']."<br>";
+					$id=$row['empID'];
+				    $fname=$row['first_name'];
+					$lname=$row['last_name'];
+					$edate=$row['employmentDate'];
+					$gen=$row['gender'];
+					$cn=$row['contact_no'];
+					$rl=$row['role'];
+
+			 echo
+			  "<form> 
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='fname'>First name:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name= 'fname' value='$fname'>
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='fname'>Last name:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name= 'lname' value='$lname'>
+				      </div>
+				  </div>
+
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='edate'>Employment Date:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name= 'edate' value='$edate'>
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='fname'>Gender:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='radio' name='gender' id='gender' value='M' CHECKED> Male
+              			<input type='radio' name='gender' id='gender' value='F'> Female<br>
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='cnumber'> Contact Number:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name='cnumber' value='$cn'> 
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='rl'>Role:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name='rl' value='$rl'>
+				      </div>
+				  </div>	
+
+			<div style='float: right; color: black;''><input type='submit' name='update' value='Update'><br></div>			  
+			  </form>";
 			  }
 		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 	}
 }
+
+
 
 $testEmployee = new EmplyeeManagement;
 //echo $testEmployee->setId(34);
@@ -218,5 +321,5 @@ $testEmployee = new EmplyeeManagement;
 
 //var_dump($testEmployee->addEmployee(1));
 //var_dump($testEmployee->deleteEmployee(47));
-//var_dump($testEmployee->loadinfo(21));
+//var_dump($testEmployee->loadinfo());
 ?>
