@@ -114,6 +114,15 @@ function validatelogin(){
 	//call verify login function
 	verifylogin($name,$pwd);
 }
+/*function checking whether username exists in database
+*calls regartist
+*/
+function checkunameA(){
+	
+}
+function checkunameL(){
+	
+}
 
 
 ?>
