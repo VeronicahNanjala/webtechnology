@@ -85,7 +85,7 @@
 <?php require_once('../controller/employeemanagementController.php');?>
 
 
-<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white; margin-top: 10%;margin-bottom:10% " name="artForm" action="" method="post" onSubmit ="validateEntries()">
+<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white; margin-top: 10%;margin-bottom:10% " name="artForm" action="updateemployee.php" method="post" onSubmit ="validateEntries()">
   <div style="text-align:center">
     <h3 style="color:white"> Enter the id of the employee you want to update</h3>
   </div>

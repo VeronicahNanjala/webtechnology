@@ -16,12 +16,11 @@ elseif (isset($_POST['delete'])) {
 }
 
 elseif (isset($_POST['idUpdate'])) {
-	echo "Existing data";
+	echo "Existing data in the databse <br>";
 	loadEmployeeeInfo();
 }
 
 elseif (isset($_POST['update'])) {
-	echo "updating an employee";
 	updateEmployee();
 }
 
@@ -171,7 +170,24 @@ function deleteEmployee(){
 *function to update information to the database
 */
 function updateEmployee(){
-	
+
+	$employeeId=$_REQUEST['id'];
+	$employeeFname=$_REQUEST['fname'];
+	$employeeLname=$_REQUEST['lname'];
+	$employeeGender=$_REQUEST['gender'];
+	$employeeEdate=$_REQUEST['edate'];
+	$employeeRole=$_REQUEST['rl'];
+	$employeeContact=$_REQUEST['cnumber'];
+
+$testEmployee = new EmplyeeManagement;
+$testEmployee->setId($employeeId);
+$testEmployee->setFname($employeeFname);
+$testEmployee->setLname($employeeLname);
+$testEmployee->setGender($employeeGender);
+$testEmployee->setEmploymentDate($employeeEdate);
+$testEmployee->setRole($employeeRole);
+$testEmployee->setContactNumber($employeeContact);
+$testEmployee->updateEmployee($employeeId);
 }
 
 function loadEmployeeeInfo(){
