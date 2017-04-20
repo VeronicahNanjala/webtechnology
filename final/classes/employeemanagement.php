@@ -131,8 +131,9 @@ return $this->contactnumber;
 */
 
 function loadinfo($id){
-	$dbconnEmployee= new databaseConnection;
+	
 	$sql="SELECT * FROM Employee WHERE empID='$id'";
+	$dbconnEmployee= new databaseConnection;
 	$conn=$dbconnEmployee->querydb($sql);
 		if($conn){
 				while ($row=$dbconnEmployee->fetchdb()){

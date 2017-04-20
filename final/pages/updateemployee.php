@@ -89,12 +89,19 @@
   <div style="text-align:center">
     <h3 style="color:white"> Udate an emplyoee</h3>
   </div>
- <!--  information from the database to be updated-->
-
- <?php ?>
+ <!--  information from the database for easy updates-->
+ <?php loadEmployeeeInfo();?>
 
 
       <!--Form container begins here -->
+  <div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="id">Id:</label>
+      <div class="col-lg-8">
+        <input type="text" class="form-control" name= "id" placeholder="Employee id" required autofocus pattern="[0-9]+" title="Only numbers">
+      </div>
+  </div>
+      
   <div class="form-group">
     <label class="control-label col-sm-3" for="fname">First name:</label>
       <div class="col-lg-8">
