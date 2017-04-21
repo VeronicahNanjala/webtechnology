@@ -1,8 +1,4 @@
 <?php 
-/*
-*  This class helps the admin to add,delete and update emplyees information 
-*/
-
 /**
 * @author Veronicah Nanjala
 */
