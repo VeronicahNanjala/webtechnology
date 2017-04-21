@@ -1,13 +1,9 @@
 <?php 
-/*
-*  This class helps the admin to add,delete and update emplyees information 
-*/
-
 /**
 * @author Veronicah Nanjala
 */
-
-class EmplyoyeeManagement
+require_once("../database/dbclass.php");
+class EmplyeeManagement extends databaseConnection
 {
 	private $firstname;
 	private $lastname;
@@ -102,7 +98,6 @@ return $this->employmentdate;
 *
 */
 public function setRole($rl){
-
 $this->role=$rl;
 }
 
@@ -117,7 +112,6 @@ return $this->role;
 *
 */
 public function setContactNumber($contact){
-
 $this->contactnumber=$contact;
 }
 
@@ -136,73 +130,192 @@ return $this->contactnumber;
 *Adding employee to the database
 */
 public function addEmployee(){
-// require once db connection
-	require_once("../database/dbclass.php");
-	$conn=new databaseConnection;
-	$dbconn=$conn->connect2db();
-
-	$sql="INSERT INTO Employee empID=?,firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=?";
-
-	$stmt = $dbconn->prepare($sql);
-
+	// $conn = new databaseConnection;
+$sql="INSERT INTO Employee (empID,first_name,last_name,employmentDate,gender,contact_no,role) VALUES('%d','%s','%s','%s','%s','%d','%s')";
 	$id=$this->employeeid;
 	$fname=$this->firstname;
-
 	$lname=$this->lastname;
 	$edate=$this->employmentdate;
 	$gen=$this->gender;
 	$contact=$this->contactnumber;
 	$rl=$this->role;
+$dbconn= new databaseConnection;
+$dbconn->sqlInjection($sql,$id,$fname,$lname,$edate,$gen,$contact,$rl);
 
+// $conn=$dbconn->querydb($sql);
+if($dbconn){
+	echo "Employee added <br>";
+}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 
-	$stmt->bind_param('i','s','s','s','s','i','s', $id,$fname,$lname,$edate,$gen,$contact,$rl);
-	$stmt->execute(); 
-    $stmt->close(); 
 }
 
 /*
 *Deleting empployee from the database
 */
-public function deleteEmployee(){
-// require once db connection
-	require_once("../database/dbclass.php");
-	$conn=new databaseConnection;
-	$dbconn=$conn->connect2db();
+public function deleteEmployee($id){
 
-	$id=$this->employeeid;
-	$sql="DELETE FROM Employee WHERE WHERE empID='$id'";
-
-	$stmt = $dbconn->prepare($sql);
-
-	$stmt->bind_param('i', $id);
-	$stmt->execute(); 
-    $stmt->close();
+	$sql="DELETE FROM Employee WHERE empID='$id'";
+	$dbconn= new databaseConnection;
+	$conn=$dbconn->querydb($sql);
+	if($conn){
+	echo "Deleted";
+}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 }
 
 /*
 *Updating an emplyee in the database
 */
-public function updateEmployee(){
-// require once db connection
-	require_once("../database/dbclass.php");
-	$conn=new databaseConnection;
-	$dbconn=$conn->connect2db();
-
-	$id=$this->employeeid;
-	$sql="UPDATE Employee SET firts_name=?,last_name=?,employmentDate=?,gender=?,contact_no=?,role=? WHERE empID='$id'";
-
-	$stmt = $dbconn->prepare($sql);
+public function updateEmployee($id){
 
 	$fname=$this->firstname;
-
+	$fname=$this->firstname;
 	$lname=$this->lastname;
 	$edate=$this->employmentdate;
 	$gen=$this->gender;
 	$contact=$this->contactnumber;
 	$rl=$this->role;
-	$stmt->bind_param('i','s','s','s','s','i','s', $id,$fname,$lname,$edate,$gen,$contact,$rl);
-	$stmt->execute(); 
-    $stmt->close();
+
+	$sql="UPDATE Employee SET first_name='$fname',last_name='$lname',employmentDate='$edate',gender='$gen',contact_no='$contact',role='$rl'WHERE empID='$id'";
+
+	$dbconn= new databaseConnection;
+	$dbconn->sqlInjection($sql,$id,$fname,$lname,$edate,$gen,$contact,$rl);
+
+	if($dbconn){
+	echo "Updated";
+	}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 }
+/*
+*Load information about emmployee from database
+*/
+
+function loadinfo(){
+	$id="";
+	$sql="SELECT empID,first_name,last_name,employmentDate, gender,contact_no, role FROM Employee";
+	$dbconnEmployee= new databaseConnection;
+	$conn=$dbconnEmployee->querydb($sql);
+		if($conn){
+			echo "<table>
+					<tr>
+						<th>First name</th>
+						<th>Last name </th>
+						<th>Employment date</th>
+						<th>Gender</th>
+						<th>Contact No</th>
+						<th>Role</th>
+					</tr>
+				";
+				while ($row=$dbconnEmployee->fetchdb()){
+					$id=$row['empID'];
+				    $fname=$row['first_name'];
+					$lname=$row['last_name'];
+					$edate=$row['employmentDate'];
+					$gen=$row['gender'];
+					$cn=$row['contact_no'];
+					$rl=$row['role'];
+
+				echo 
+				"<tr>
+						<td>{$row['first_name']}  </td>
+						<td>{$row['last_name']}  </td>
+						<td>{$row['employmentDate']}  </td>
+						<td>{$row['gender']}  </td>
+						<td>{$row['contact_no']}  </td>
+						<td>{$row['role']}  </td>
+
+						<td><a href='../pages/updateemployee.php?update={$row['empID']}'>Update</a></td>
+						<td><a href='employeePage.php?delete={$row['empID']}'>Delete</a></td>
+				</tr>
+
+			";
+			  }
+			  echo "</table>";
+		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+	}
+
+
+function retainValuesOnEdit(){
+	$id="";
+	$sql="SELECT empID,first_name,last_name,employmentDate, gender,contact_no, role FROM Employee";
+	$dbconnEmployee= new databaseConnection;
+	$conn=$dbconnEmployee->querydb($sql);
+		if($conn){
+				while ($row=$dbconnEmployee->fetchdb()){
+					$id=$row['empID'];
+				    $fname=$row['first_name'];
+					$lname=$row['last_name'];
+					$edate=$row['employmentDate'];
+					$gen=$row['gender'];
+					$cn=$row['contact_no'];
+					$rl=$row['role'];
+
+			 echo
+			  "<form> 
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='fname'>First name:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name= 'fname' value='$fname'>
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='fname'>Last name:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name= 'lname' value='$lname'>
+				      </div>
+				  </div>
+
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='edate'>Employment Date:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name= 'edate' value='$edate'>
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='fname'>Gender:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='radio' name='gender' id='gender' value='M' CHECKED> Male
+              			<input type='radio' name='gender' id='gender' value='F'> Female<br>
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='cnumber'> Contact Number:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name='cnumber' value='$cn'> 
+				      </div>
+				  </div>
+
+				 <div class='form-group'>
+				    <label class='control-label col-sm-3' for='rl'>Role:</label>
+				      <div class='col-lg-8'>
+				  		 <input type='text' class='form-control' name='rl' value='$rl'>
+				      </div>
+				  </div>	
+
+			<div style='float: right; color: black;''><input type='submit' name='update' value='Update'><br></div>			  
+			  </form>";
+			  }
+		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+	}
 }
+
+
+
+$testEmployee = new EmplyeeManagement;
+//echo $testEmployee->setId(34);
+// echo $testEmployee->setFname("Veronicah");
+// echo $testEmployee->setLname("Ndutamwangi");
+// echo $testEmployee->setGender("M");
+// echo $testEmployee->setEmploymentDate("12/12/1994");
+// echo $testEmployee->setRole("Major");
+// echo $testEmployee->setContactNumber(56787);
+
+//$testEmployee->addEmployee();
+
+//var_dump($testEmployee->addEmployee(1));
+//var_dump($testEmployee->deleteEmployee(47));
+//var_dump($testEmployee->loadinfo());
 ?>
