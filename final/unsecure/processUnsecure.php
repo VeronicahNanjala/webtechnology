@@ -30,9 +30,9 @@ function verifylogin($username,$password){
 		$row=$verlogin->fetchdb();
 		$pass=$row['password'];
 
-		if(password_verify($password, $pass)){
+		if(password_verify($password, $pass)==$row['password']){
 			session_start();
-			$_SESSION['username']=$name;
+			$_SESSION['username']=$row['username'];
 			header("location: ../index.php");
 		}
 
@@ -51,34 +51,26 @@ function verifyloginArtist($username,$password){
 		$row=$verlogin->fetchdb();
 		$pass=$row['password'];
 
-		if(password_verify($password, $hash)==row['password']){
+		if(password_verify($password, $hash)==$row['password']){
 			session_start();
-			$_SESSION['username']=$name;
+			$_SESSION['username']=$row['username'];
 			header("location: ../index.php");
 		}
 
 	 } else {echo  mysqli_error($verlogin->connect);}
 }
 
-function regartist(){
+function regartist($fn,$ln,$email,$uname,$pwd,$mtype,$contact){
 	//hash password
-	$fname=$_REQUEST['fname'];
-	$lname=$_REQUEST['lname'];
-	$email=$_REQUEST['email'];
-	$username=$_REQUEST['username'];
-	$pwd=$_REQUEST['password'];
-	$musictype=$_REQUEST['musictype'];
-	$contact=$_REQUEST['contact'];
-
 	$pwdhash=password_hash($pwd,PASSWORD_DEFAULT);
 	//query
 	$sql="INSERT INTO artists(first_name,last_name,username,
 	email,password,music_type, contact_no) 
-	VALUES ('%s','%s','%s','%s','%s','%s','%d')";
+	VALUES ('%S','%s','%s','%s','%s','%s','%d')";
 	
 	$register=new databaseConnection;
 	//execute query
-	$executeqry=$register->sqlInjection($sql,$fname,$lname,$username,$email,$pwdhash,$musictype,$contact);
+	$executeqry=$register->sqlInjection($sql,$fn,$ln,$email,$uname,$pwd,$mtype,$contact);
 	if($executeqry){
 		header('Location: ../login/');
 	}
@@ -90,19 +82,16 @@ function regartist(){
 }
 
 
-function reglistener(){
+function reglistener($uname,$pwd){
 	//hash password
-	$username=$_REQUEST['fusername'];
-	$password=$_REQUEST['fpassword'];
-
-	$pwdhash=password_hash($password,PASSWORD_DEFAULT);
+	$pwdhash=password_hash($pwd,PASSWORD_DEFAULT);
 	//query
 	$sql="INSERT INTO listeners(username,password) 
 	VALUES ('%s','%s')";
 	$register=new databaseConnection;
 	//execute query
 	//$executeqry=$register->querydb($sql);
-	$executeqry=$register->sqlInjection($sql,$username,$pwdhash);
+	$executeqry=$register->sqlInjection($sql,$uname,$pwdhash);
 	if($executeqry){
 		header('Location: ../login/');
 	}
@@ -144,7 +133,7 @@ $name = $email = $sname = $uname = $pwd = "";
     $pwd = test_input($_POST["fpassword"]);
   }
 
-	reglistener();
+	reglistener($uname,$pwd);
 }
 
 
@@ -267,7 +256,7 @@ $fnErr = $lnErr = $unameErr = $emailErr = $pwdErr = $crnErr = $mtypeErr = $regio
    		}
 
 
-	regartist();
+	regartist($fn,$ln,$email,$uname,$pwd,$mtype,$contact);
 	
 }
 }
@@ -294,7 +283,7 @@ function validatelogin(){
 /*
 *if validation is successful, run the verifylogin function
 */
-verifylogin($username, $password);
+verifylogin($username, $password,$email,);
 
 }
 
