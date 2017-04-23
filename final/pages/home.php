@@ -203,44 +203,37 @@
 		<div class="row">
 			<div class="col-lg-4 " >
 				<!-- inserting an upcoming event images in the first column of the grid-->
-				<a href="../assets/img/events/audience.jpeg" data-lightbox= "This Month">
-					<img src="assets/img/events/audience.jpg"  width="440px" height="300px">
+				<a href="image/audience.jpeg" data-lightbox= "This Month">
+					<img src="../image/audience.jpg"  width="440px" height="300px">
 				</a>
-				<div class="panel panel-default">
-					<div class="panel-body" style="max-width:440px">
-						<div class="caption" width="440px">
+				<div class="panel">
 							<h3 >Lagos Photo</h3>
 							<p>Challenging  World's Afro-Pessimism</p>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 ">
 				<!-- inserting an upcoming event images in the first column of the grid-->
-				<a href="album_launch.jpeg" data-lightbox= "This Month">
-					<img src="../assets/img/events/album_launch.jpg" width="440px" height="300px">
+				<a href="image/album_launch.jpeg" data-lightbox= "This Month">
+					<img src="../image/album_launch.jpg" width="440px" height="300px">
 				</a>
-				<div class="panel panel-default" style="max-width:440px;" >
-					<div class="panel-body" >
+				<div class="panel" >
 						<div class="caption">
 							<h3>Blanket & Wine Festival</h3>
 							<p>Explore African Music Through the Eyes of Nairobi</p>
 						</div>
-					</div>
+					
 				</div>
 			</div>
 			<div class="col-lg-4 " >
 				<!-- inserting an upcoming event images in the first column of the grid-->
 				<a href="dancehall.jpeg" data-lightbox= "This Month">
-					<img src="../assets/img/events/dancehall.jpg "  width="440px" height="300px ">
+					<img src="../image/dancehall.jpg "  width="440px" height="300px ">
 				</a>
-				<div class="panel panel-default" style="max-width:440px">
-					<div class="panel-body">
+				<div class="panel">
 						<div class="caption">
 							<h3>Ultra Music Festival Johburg</h3>
 							<p>Live the experience of African House and Trap Music</p>
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>
