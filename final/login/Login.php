@@ -33,6 +33,7 @@
 
             <!-- Body Section begins here -->
 <body>
+<?php require_once ("../unsecure/processUnsecure.php"); ?>
 <header>
 <div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
   <div class="container">
@@ -80,18 +81,15 @@
 
   <div class="col_1">
         <label><b> Username </b></label>
-         <input type="text" placeholder="Enter Username" id="uname" required>
+         <input type="text" placeholder="Enter Username" id="uname" name="uname">
           <input type="checkbox" checked="checked"> Remember Username<br>
             <br>
             <label><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" id="psw" required>
+          <input type="password" placeholder="Enter Password" id="psw" name="pass">
             <br>
          <div class=helper>* The password should be atleast 6 characters long. </div>
 
         <button type="submit" name="userlogin" onclick="validate()">Login as listener </button>
-         <br><br>
-    
-        <button type="submit" name="artistlogin" onclick="validate()">Login as artist  </button>
          <br><br>
 
   <!--<div class="col_1" style="background-color:#f1f1f1">-->
