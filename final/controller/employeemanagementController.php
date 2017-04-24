@@ -1,4 +1,5 @@
 <?php
+
 /**
 * @author Veronicah Nanjala
 * this class validates the entries that the admin enter while registering, deleting or updating an employee
@@ -22,6 +23,9 @@ elseif (isset($_POST['update'])) {
 	updateEmployee();
 }
 
+elseif (isset($_POST['addAmin'])) {
+	addAdmin();
+}
 
 
 /*
@@ -112,20 +116,50 @@ function validateData(){
 	}
 
 
-
-
 	if (isset($_POST['rl']) && !empty($_POST['rl'])){
 		 $eRole=preg_match('/^[a-zA-Z]+$/', $_POST['rl']);
 		 if ($eRole==true) {
 		 $employeeRole = $_POST['rl'];
 		 }
 		 else{
-		      echo "Id pattern is wrong. Only letters <br>";
+		      echo "Role pattern is wrong. Only letters <br>";
 		     }
 	}
 	else{
 		echo "Role is required";
-	}		
+	}	
+
+
+
+	///add employee
+		if (isset($_POST['username']) && !empty($_POST['username'])){
+		 $eRole=preg_match('/^[a-zA-Z]+$/', $_POST['username']);
+		 if ($eRole==true) {
+		 $username = $_POST['username'];
+		 }
+		 else{
+		      echo "Username pattern is wrong. Only letters <br>";
+		     }
+	}
+	else{
+		echo "Username is required";
+	}
+
+
+	if (isset($_POST['mail']) && !empty($_POST['mail'])){
+		 $email = $_POST['mail'];
+	}
+	else{
+		echo "Email is required";
+	}
+
+	if (isset($_POST['password']) && !empty($_POST['password'])){
+		 $pass = $_POST['password'];
+	}
+	else{
+		echo "password is required";
+	}
+
 }
 
 /*
@@ -188,5 +222,19 @@ $testEmployee->updateEmployee($employeeId);
 function loadEmployeeeInfo(){
 	$testEmployee = new EmplyeeManagement;
 	$testEmployee->loadinfo();
+}
+
+function addAdmin(){
+	$username=$_REQUEST['username'];
+	$email=$_REQUEST['mail'];
+	$pass=$_REQUEST['password'];
+	$hash=password_hash($pass, PASSWORD_DEFAULT);
+
+	$testEmployee = new EmplyeeManagement;
+
+	$testEmployee->setUserName($username);
+	$testEmployee->setMail($email);
+	$testEmployee->setPass($hash);
+	$testEmployee->admin();
 }
 ?>

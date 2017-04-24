@@ -59,10 +59,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="current"><a href="#intro"> Home </a></li>
+      	 <li><a href="pages/admin.php">Admin</a></li>
+        <!-- <li class="current"><a href="#intro"> Home </a></li> -->
 		<li><a href="register/listenerSignUp.php"> Sign Up as a Listener </a></li>
 		<li><a href="register/artistSignUp.php"> Sign Up as a an Artist</a></li>
-		<li><a href="login/Login.php"> Sign In</a></li>
+		<li><a href="login/"> Sign In</a></li>
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
 	</div>

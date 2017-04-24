@@ -8,7 +8,11 @@
 
 -->
 
-
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("location:../index.php")
+}?>
 
 <!doctype html>
 
@@ -109,9 +113,11 @@
 	  <div class="navigation">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
-      <ul class="nav navbar-nav navbar-right">
-      <a class="navbar-brand" href="../pages/addemployee.php"> Add employee </a>
+    <ul class="nav navbar-nav navbar-right">
+    <li class="current"><a href="../pages/addemployee.php"> Add employee </a></li>
+    <li class="current"><a href="../pages/addAdmin.php"> Add admin </a></li>
     <li class="current"><a href="../layout/employeePage.php"> Home </a></li>
+    <li class="current"><a href="../login/logout.php"> Logout </a></li>
     <li><a href="listenerSignUp.php">  </a></li>
     <li><a href="artistSignUp.html"> </a></li>
     <li><a href="Login.html"> </a></li>
@@ -138,6 +144,7 @@
   <div style="text-align:center">
 
   <?php 
+
   require_once('../controller/employeemanagementController.php');
   $viewEmployees=new EmplyeeManagement;
   $viewEmployees->loadinfo();

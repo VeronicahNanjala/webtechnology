@@ -5,7 +5,11 @@
 
    Author: Veronicah Nanjala
 -->
-
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("location:../index.php")
+}?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +20,7 @@
     <meta name="description" content="African Music Reserve" />
     <meta name="author" content="Ngoma Project" />
 
-    <title>Artist Sign Up</title>
+    <title>Employee register</title>
 
 <!-- Bootstrap -->
 
@@ -43,7 +47,6 @@
 
       <!-- Body Section begins here -->
 <body>
-
 <header>
 <div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
   <div class="container">
@@ -58,18 +61,23 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="../index.php"> Ngoma </a>
+      <a class="navbar-brand" href="##"> Ngoma </a>
 
     </div>
 
+  
   <div class="navigation">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="current"><a href="#intro"> Home </a></li>
-    <li><a href="listenerSignUp.php"> Sign Up as a Listener </a></li>
-    <li><a href="artistSignUp.html"> Sign Up as a an Artist</a></li>
-    <!-- <li><a href="../login/"> Sign In</a></li> -->
+    <li class="current"><a href="../pages/addemployee.php"> Add employee </a></li>
+    <li class="current"><a href="../pages/addAdmin.php"> Add admin </a></li>
+    <li class="current"><a href="../layout/employeePage.php"> Home </a></li>
+    <li class="current"><a href="../login/logout.php"> Logout </a></li>
+        
+    <li><a href="listenerSignUp.php">  </a></li>
+    <li><a href="artistSignUp.html"> </a></li>
+    <li><a href="Login.html"> </a></li>
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
   </div>
@@ -78,74 +86,42 @@
 </div>
 
 </header>
-<?php require_once('../unsecure/processUnsecure.php');?>
 
             <!-- Form for data entry begins-->
 <div style = "margin-top:100px; ">
-<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit ="      validateEntries()">
+
+<?php require_once('../controller/employeemanagementController.php');?>
+
+<form class="form-horizontal" style="background-color: #4e3f3e;width: 50%;margin:auto;color: white;" name="artForm" action="" method="post" onSubmit ="validateEntries()">
   <div style="text-align:center">
-    <h3 style="color:white"> SIGN UP NOW</h3>
+    <h3 style="color:white"> Add an Admin</h3>
   </div>
 
       <!--Form container begins here -->
-
-  <div>
-  <div class="form-group">
-    <label class="control-label col-sm-3" for="fname">First name:</label>
-      <div class="col-lg-8">
-        <input type="text" class="form-control" name= "fname" placeholder="Full Name" required autofocus pattern="[a-zA-Z]+" title="Only letters">
-      </div>
-  </div> 
-
-  <div class="form-group">
-    <label class="control-label col-sm-3" for="lname">Last name:</label>
-      <div class="col-lg-8">
-        <input type="text" class="form-control" name= "lname" placeholder="Full Name" required autofocus pattern="[a-zA-Z]+" title="Only letters">
-      </div>
-  </div>   
-
-  <div class="form-group">
-   <label class="control-label col-sm-3" for="email">Email:</label>
+       <div class="form-group">
+   <label class="control-label col-sm-3" for="mail">Email:</label>
       <div class="col-sm-8">
-        <input type="email" class="form-control" name="email" required placeholder="Email"> 
+        <input type="email" class="form-control" name="mail" required placeholder="Email" >
+      </div>
+  </div>      
+  <div class="form-group">
+   <label class="control-label col-sm-3" for="username">Username:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" name="username" required placeholder="Username" >
       </div>
   </div>
+
+  <div class="form-group">
+   <label class="control-label col-sm-3" for="password">Passoword:</label>
+      <div class="col-sm-8">
+        <input type="password" class="form-control" name="password" required placeholder="password">
+      </div>
+  </div>
+
      
-  <div class="form-group">
-   <label class="control-label col-sm-3" for="username">User name:</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="username" required placeholder="Username" minlength="6" pattern="[a-zA-Z0-9]+" title="Only letters and numerics"> 
-      </div>
-  </div>
-     
-  <div class="form-group">
-   <label class="control-label col-sm-3" for="password">Password:</label>
-      <div class="col-sm-8">
-        <input type="password" id="pass1" class="form-control" name="password" required placeholder="Password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-      </div>
-  </div>
-
- <div class="form-group">
-   <label class="control-label col-sm-3" for="musictype">Type of music:</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="musictype" required placeholder="Music type" pattern="[a-zA-Z\s]+" title="Only letters and spaces"> 
-      </div>
-  </div>  
-  
- <div class="form-group">
-   <label class="control-label col-sm-3" for="contact">Contact information:</label>
-      <div class="col-sm-8">
-        <textarea name="contact" class="form-control" rows="4" cols="50" required placeholder="Contact information" pattern="[a-zA-Z0-9\s]+" title="Only letters, numbers and spaces"></textarea>
-        </div>
-  </div>
-   
-      <!-- Submission section for form -->
-   <div style="float: right; color: black;"><input type="submit" name="SignupArt" onclick="validate()"></div><br>
-   <br>
-   <p style="text-align:center">
-    Already have an account? <!-- <div type="button" class="btn btn-link" style="text-align:center"> --><a href="home.html">Sign in</a></div>
-
-  </div>
+ 
+  <!-- Submission section for form -->
+   <div style="float: right; color: black;"><input type="submit" name="addAmin" value="Add"><br></div>
 </form>
 </div>
 
@@ -157,7 +133,7 @@
       <div class="col-md-12">
         <div class="aligncenter">
         <h1 style="color:white">
-          Sign Up to experience more! <br>
+          Emplyee Management Section <br>
         </h1>
                 <ul class="social-network social-circle">
                     <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
