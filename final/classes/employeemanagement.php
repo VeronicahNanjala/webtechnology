@@ -13,11 +13,38 @@ class EmplyeeManagement extends databaseConnection
 	private $contactnumber;
 	private $role;
 
+	private $usurname;
+	private $email;
+	private $password;
+
 	function __construct()
 	{
 		# code...
 	}
 
+function setUserName($name){
+$this->usurname=$name;
+}
+
+function getUsername(){
+return $this->usurname;
+}
+
+function setMail($mail){
+$this->email=$mail;
+}
+
+function getMail(){
+return $this->email;
+}
+
+function setPass($pass){
+$this->password=$pass;
+}
+
+function getPass(){
+return $this->password;
+}
 /*
 *Set the id of the employee 
 */
@@ -300,8 +327,33 @@ function retainValuesOnEdit(){
 			  }
 		}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
 	}
+
 }
 
+
+
+
+
+/*
+*Adding an admin to the database
+*/
+public function admin(){
+	// $conn = new databaseConnection;
+$sql="INSERT INTO admins (email, user_name,password) VALUES('%s','%s','%s')";
+	$usename=$this->usurname;
+	$mail=$this->email;
+	$pass=$this->password;
+$dbconn= new databaseConnection;
+$dbconn->sqlInjection($sql,$mail,$usename,$pass);
+
+// $conn=$dbconn->querydb($sql);
+if($dbconn){
+	echo "Admin added <br>";
+}else trigger_error("Query Failed! SQL: $sql - Error: ". mysqli_error($dbconn->connect));
+
+}
+
+}
 
 
 $testEmployee = new EmplyeeManagement;

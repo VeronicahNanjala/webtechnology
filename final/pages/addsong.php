@@ -1,10 +1,10 @@
-<!-- Ngoma - Team Project
-   Group members: Benedicta Amo Bempah, Tito Magero, Veronicah Nanjala, Loltolo Petro Lesapiti
-   Web Technologies 
-   Task 2.1 - Web Tech: Client Side / Front End Programming
+<?php 
 
-   Author: Marufu
--->
+/**
+*@author Bridgett Marufu
+*/
+
+?>
 <html>
 <head>
 <style>
@@ -48,6 +48,10 @@
 
             <!-- Body Section begins here -->
 <body>
+
+<?php
+require_once('../controller/addsongcontroller.php');
+?>
 <header>
 <div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
   <div class="container">
@@ -62,7 +66,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="../index.php"> Ngoma </a>
+      <a class="navbar-brand" href="###"> Ngoma </a>
 
     </div>
 
@@ -70,7 +74,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../index.php"> Home </a></li>
+        <li><a href="../layout/songpage.php"> Home </a></li>
+        <li class="current"><a href="../login/logout.php"> Logout </a></li>
         <!-- <li><a href="../pages/contactUs.php"> Contact Us </a></li> -->
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
@@ -82,47 +87,45 @@
 </header>
 
 <body>
-
-<?php require_once('../unsecure/processUnsecure.php');?>
-<!--A form for the listener to sign up-->
+<!--A form for the artist to add A NEW SONG-->
 <div style = "margin-top:100px">
-<form name="myForm" style = "background-color: #4e3f3e;  width :50% ;margin: auto; color: white;"  action="" onsubmit="return validateForm()" method="post">
+<form name="myForm" style = "background-color: #4e3f3e;  width :50% ;margin: auto; color: white;"  action="" onsubmit="return validateAddForm()" method="post">
 	<table style = "padding-top: 15%; margin:auto;">
-<h1 align= "center" style= "color: white;">Sign Up</h1>
-<!-- 	<tr>
-	<td class = "td" > First name</td>
-	<td> <input type="text"  name="fname" size="52%"> <br><br></td>
-	</tr> -->
-
-<!-- 	<tr>
-	<td class = "td"> Surname</td>
-	<td> <input type="text" name="fsurname" size="52%"> <br><br></td>
-	</tr>-->
-
-<!-- 
+<h1 align= "center" style= "color: white;">Song Information</h1>
 	<tr>
-	<td class = "td"> Email</td>
-	<td><input type="text" name ="femail" size="52%"><br><br></td>
-	</tr> --> 
-
-	<tr>
-	<td class = "td"> Username</td>
-	<td> <input type="text" name="fusername" size="52%" autofocus> <br><br></td>
+	<td class = "td" > Song name</td>
+	<td> <input type="text"  name="songname" size="52%"> <br><br></td>
 	</tr>
 
 	<tr>
-	<td class = "td">Password</td>
-	<td><input type="password" name="fpassword" size="52%"><br><br></td>
+	<td class = "td"> Genre</td>
+	<td> <input type="text" name="genre" size="52%"> <br><br></td>
 	</tr>
 
-<!-- 	<tr>
-	<td class = "td">Confirm Password</td>
-	<td><input type="password" name="fcpassword" size="52%"><br><br></td>
-	</tr> -->
+
+	<tr>
+	<td class = "td"> Artist</td>
+	<td><input type="text" name ="artist" size="52%"><br><br></td>
+	</tr>
+
+	<tr>
+	<td class = "td"> Record label</td>
+	<td> <input type="text" name="label" size="52%"> <br><br></td>
+	</tr>
+
+	<tr>
+	<td class = "td">URL</td>
+	<td><input type="text" name="url" size="52%"><br><br></td>
+	</tr>
+
+	<tr>
+	<td class = "td">Album</td>
+	<td><input type="text" name="album" size="52%"><br><br></td>
+	</tr>
 
 	<tr>
 	<td></td>
-	<td ><input type="submit" class= "button" name = "listenerSignUp" value="Sign up"   ></td>
+	<td ><input type="submit" class= "button" value="add" name= "addSong"></td>
 	</tr>
 
 	</table>
@@ -133,46 +136,41 @@
 
 <script>
 //A function that validates contents entered by the user
-function validateForm() {
+function validateAddForm() {
 	//check if name is not empty
-    var x = document.forms["myForm"]["fname"].value;
+    var x = document.forms["myForm"]["songname"].value;
     if (x == "") {
-        alert("Please enter your first name");
+        alert("Please enter your song name");
         return false;
     }
    // check if surname is not empty
-     var y = document.forms["myForm"]["fsurname"].value;
+     var y = document.forms["myForm"]["genre"].value;
     if (y == "") {
-        alert("Please enter your surname");
+        alert("Please enter genre of the song");
         return false;
         }
     //check if the email is not empty
-         var z = document.forms["myForm"]["femail"].value;
+         var z = document.forms["myForm"]["artist"].value;
     if (z == "") {
-        alert("Please enter your email adress");
+        alert("Please enter artist name");
         return false;
     }
     //check if username is not empty
-     var a = document.forms["myForm"]["fusername"].value;
+     var a = document.forms["myForm"]["label"].value;
      if (a == "") {
-        alert("Please enter a username");
+        alert("Please enter a label name");
         return false;
     }
     //check if password is not empty
-     var b = document.forms["myForm"]["fpassword"].value;
+     var b = document.forms["myForm"]["url"].value;
      if (b == "") {
-        alert("Please nter password");
+        alert("Please enter Url");
         return false;
     }
-     var c = document.forms["myForm"]["fcpassword"].value;
+     var c = document.forms["myForm"]["album"].value;
      if (c == "") {
-        alert("Confirm password");
+        alert("Enter album name");
         return false;
-    }
-    //check if the passwords are the same
-    if(c!=b){
-    	alert("Password mismatch, please try again");
-    	return false;
     }
 
 }

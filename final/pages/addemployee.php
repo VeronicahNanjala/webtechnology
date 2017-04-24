@@ -5,6 +5,11 @@
 
    Author: Veronicah Nanjala
 -->
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("location:../index.php")
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +71,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
+
         <li class="current"><a href="../layout/employeePage.php"> Home </a></li>
+
+    <li class="current"><a href="../pages/addemployee.php"> Add employee </a></li>
+    <li class="current"><a href="../pages/addAdmin.php"> Add admin </a></li>
+    <li class="current"><a href="../layout/employeePage.php"> Home </a></li>
+    <li class="current"><a href="../login/logout.php"> Logout </a></li>
+
     <li><a href="listenerSignUp.php">  </a></li>
     <li><a href="artistSignUp.html"> </a></li>
     <li><a href="Login.html"> </a></li>

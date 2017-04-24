@@ -26,6 +26,9 @@
 		</style>
 	</head>
 	<body>
+
+	<?php require_once($_SERVER['DOCUMENT_ROOT']."../finalprojectwebtech/final/unsecure/processUnsecure.php");?>
+
 		<nav class="navbar navbar-default">
 		<div class="container-fluid">
 		    <div class="navbar-header">
@@ -36,12 +39,14 @@
 			  <div class="col-md-9"></div>
 			  <div class="col-md-3"></div>
 				<ul class="nav navbar-nav navbar-right">
-					<li id="lst"><a href="index.html #intro">HOME</a></li>
-					<li id="lst"><a href="index.html #about">ABOUT</a></li>
-					<li id="lst"><a href="index.html #works">LOGIN</a></li>
-					<li id="lst"><a href="index.html #works">SIGNUP</a></li>
-					<li id="lst"><a href="index.html #events">EVENTS</a></li>
-					<li id="lst"><a href="index.html #contact">CONTACT US</a></li>
+
+					<li id="lst"><a href="../index.php">HOME</a></li>
+					<li id="lst"><a href="../login/logout.php">Logout</a></li>
+					<!-- <li id="lst"><a href="##">ABOUT</a></li> -->
+					<!-- <li id="lst"><a href="index.html #works">LOGIN</a></li> -->
+
+					<!-- <li id="lst"><a href="index.html #events">EVENTS</a></li>
+
 				
 				</ul>
 			</div>
@@ -50,10 +55,17 @@
 		<!--columns to create space in canvas to hold event posters -->
 		
 			<div class="jumbotron">
+
 				<form>
 					<div class="search">
 						<input type="text" name="event" placeholder="search event by city">
 						<button type="submit">&#128269;</button>
+
+				<form method="post" action="">
+					<div class="search">
+						<input type="text" name="location" placeholder="search event by city">
+						<button type="submit" name="eventlocation">&#128269;</button>
+
 					</div>
 				</form>
 				<h4>Events Happening this Month<h4>
@@ -71,7 +83,11 @@
 							</a>
 						</div>
 						<div class="col-lg-4">
+
 							<a href="image/lamu.jpg" data-lightbox="May" class="fancybox">
+
+							<a href="" data-lightbox="May" class="fancybox">
+
 								<img src="../image/lamu.jpg" width="440 px" height="380px" >
 							</a>
 						</div>

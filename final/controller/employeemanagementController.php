@@ -5,11 +5,25 @@
 */
 require_once("../classes/employeemanagement.php");
 
+<<<<<<< HEAD
 if (isset($_POST['add'])) {
 	// register the employee
 	addEmployee();
 }
 
+=======
+/**
+* @author Veronicah Nanjala
+* this class validates the entries that the admin enter while registering, deleting or updating an employee
+*/
+require_once("../classes/employeemanagement.php");
+
+if (isset($_POST['add'])) {
+	// register the employee
+	addEmployee();
+}
+
+>>>>>>> nanjala
 elseif (isset($_GET['delete'])) {
 	$clear = (int)($_GET['delete']);
 	$del = new EmplyeeManagement;
@@ -22,6 +36,12 @@ elseif (isset($_POST['update'])) {
 	updateEmployee();
 }
 
+<<<<<<< HEAD
+=======
+elseif (isset($_POST['addAmin'])) {
+	addAdmin();
+}
+>>>>>>> nanjala
 
 
 /*
@@ -112,20 +132,63 @@ function validateData(){
 	}
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> nanjala
 	if (isset($_POST['rl']) && !empty($_POST['rl'])){
 		 $eRole=preg_match('/^[a-zA-Z]+$/', $_POST['rl']);
 		 if ($eRole==true) {
 		 $employeeRole = $_POST['rl'];
 		 }
 		 else{
+<<<<<<< HEAD
 		      echo "Id pattern is wrong. Only letters <br>";
+=======
+		      echo "Role pattern is wrong. Only letters <br>";
+>>>>>>> nanjala
 		     }
 	}
 	else{
 		echo "Role is required";
+<<<<<<< HEAD
 	}		
+=======
+	}	
+
+
+
+	///add employee
+		if (isset($_POST['username']) && !empty($_POST['username'])){
+		 $eRole=preg_match('/^[a-zA-Z]+$/', $_POST['username']);
+		 if ($eRole==true) {
+		 $username = $_POST['username'];
+		 }
+		 else{
+		      echo "Username pattern is wrong. Only letters <br>";
+		     }
+	}
+	else{
+		echo "Username is required";
+	}
+
+
+	if (isset($_POST['mail']) && !empty($_POST['mail'])){
+		 $email = $_POST['mail'];
+	}
+	else{
+		echo "Email is required";
+	}
+
+	if (isset($_POST['password']) && !empty($_POST['password'])){
+		 $pass = $_POST['password'];
+	}
+	else{
+		echo "password is required";
+	}
+
+>>>>>>> nanjala
 }
 
 /*
@@ -189,4 +252,21 @@ function loadEmployeeeInfo(){
 	$testEmployee = new EmplyeeManagement;
 	$testEmployee->loadinfo();
 }
+<<<<<<< HEAD
+=======
+
+function addAdmin(){
+	$username=$_REQUEST['username'];
+	$email=$_REQUEST['mail'];
+	$pass=$_REQUEST['password'];
+	$hash=password_hash($pass, PASSWORD_DEFAULT);
+
+	$testEmployee = new EmplyeeManagement;
+
+	$testEmployee->setUserName($username);
+	$testEmployee->setMail($email);
+	$testEmployee->setPass($hash);
+	$testEmployee->admin();
+}
+>>>>>>> nanjala
 ?>

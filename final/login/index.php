@@ -33,7 +33,11 @@
 
             <!-- Body Section begins here -->
 <body>
+<<<<<<< HEAD:final/login/Login.php
+<?php require_once ("../unsecure/processUnsecure.php"); ?>
+=======
 <?php require_once("../Unsecure/processUnsecure.php");?>
+>>>>>>> nanjala:final/login/index.php
 <header>
 <!-- <div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
   <div  --><!-- class="container"> -->
@@ -56,16 +60,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
 
       <ul class="nav navbar-nav navbar-right">
-
         <li><a href="../index.php"> Home </a></li>
         <li><a href="../pages/contactUs.php"> Contact Us </a></li>
-
-      	 <li><a href="pages/admin.php">Admin</a></li>
-        <!-- <li class="current"><a href="#intro"> Home </a></li> -->
-		<li><a href="register/listenerSignUp.php"> Sign Up as a Listener </a></li>
-		<li><a href="register/artistSignUp.php"> Sign Up as a an Artist</a></li>
-		<li><a href="login/"> Sign In</a></li>
-
       </ul></nav>
     </div> <!-- /.navbar-collapse -->
     <!-- </div>  -->
@@ -89,6 +85,18 @@
 
   <div class="col_1">
         <label><b> Username </b></label>
+<<<<<<< HEAD:final/login/Login.php
+         <input type="text" placeholder="Enter Username" id="uname" name="uname">
+          <input type="checkbox" checked="checked"> Remember Username<br>
+            <br>
+            <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" name="pass">
+            <br>
+         <div class=helper>* The password should be atleast 6 characters long. </div>
+
+        <button type="submit" name="userlogin" onclick="validate()">Login as listener </button>
+         <br><br>
+=======
          <input type="text" placeholder="Enter Username" id="uname" name="usename" required autofocus>
             <br>
             <label><b>Password</b></label>
@@ -96,6 +104,7 @@
             <br>
         <button type="submit" name="login" onclick="validate()">Login Listener</button><br><br>
         <button type="submit" name="loginA" onclick="validate()">Login artist</button><br><br>
+>>>>>>> nanjala:final/login/index.php
 
          
   <!--<div class="col_1" style="background-color:#f1f1f1">-->
@@ -142,3 +151,4 @@
 
  
 </body>
+</html>
